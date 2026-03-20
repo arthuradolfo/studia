@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Declinationes Latinae — Drill</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+
+<div class="zoom-controls">
+  <button class="zoom-btn" onclick="toggleTheme()" id="themeBtn" title="Alternar tema">☀</button>
+  <button class="zoom-btn" onclick="zoom(-1)" title="Diminuir">A−</button>
+  <button class="zoom-btn" onclick="zoom(1)" title="Aumentar">A+</button>
+</div>
+
+<h1>DECLINATIONES LATINAE<small>Drill de Memorização</small></h1>
+
+<!-- ═══ MENU ═══ -->
+<div id="menu" class="screen active">
+  <button class="menu-btn" onclick="showScreen('estudo')">
+    <span class="num">I.</span> Estudo
+    <span class="desc">Ver tabelas completas das declinações</span>
+  </button>
+  <button class="menu-btn" onclick="startPratica()">
+    <span class="num">II.</span> Prática
+    <span class="desc">Preencher formas aleatórias com feedback imediato</span>
+  </button>
+  <button class="menu-btn" onclick="showScreen('quiz-setup')">
+    <span class="num">III.</span> Quiz
+    <span class="desc">Perguntas aleatórias com pontuação e sequência</span>
+  </button>
+  <button class="menu-btn" onclick="startDesafio()">
+    <span class="num">IV.</span> Desafio
+    <span class="desc">Declinar a palavra inteira (todos os 12 campos)</span>
+  </button>
+  <div class="word-count" id="wordCount"></div>
+</div>
+
+<!-- ═══ ESTUDO ═══ -->
+<div id="estudo" class="screen">
+  <button class="back-btn" onclick="showScreen('menu')">← Menu</button>
+  <h2>Estudo — Tabelas Completas</h2>
+  <div class="dec-selector" id="decSelector"></div>
+  <div id="tables"></div>
+</div>
+
+<!-- ═══ PRÁTICA ═══ -->
+<div id="pratica" class="screen">
+  <button class="back-btn" onclick="showScreen('menu')">← Menu</button>
+  <h2>Prática — Preencha a forma correta</h2>
+  <p class="hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
+  <p class="hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span>Acertos: <span id="prAcertos">0</span>/<span id="prTotal">0</span></span>
+    <span id="prPct"></span>
+  </div>
+  <div class="prompt-box" id="prPrompt"></div>
+  <div id="prFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="prNextBtn" onclick="praticaNext()" style="display:none;">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ SETUP ═══ -->
+<div id="quiz-setup" class="screen">
+  <button class="back-btn" onclick="showScreen('menu')">← Menu</button>
+  <h2>Quiz — Configuração</h2>
+  <div class="num-input-row">
+    <label>Número de perguntas:</label>
+    <div class="num-spinner">
+      <button class="spin-btn" onclick="stepQuiz(-1)">&#9662;</button>
+      <input type="number" id="quizNum" value="10" min="1" max="200">
+      <button class="spin-btn" onclick="stepQuiz(1)">&#9652;</button>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="startQuiz()">Iniciar Quiz</button>
+</div>
+
+<!-- ═══ QUIZ ═══ -->
+<div id="quiz" class="screen">
+  <button class="back-btn" onclick="showScreen('menu')">← Menu</button>
+  <h2>Quiz</h2>
+  <p class="hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span>Pergunta <span id="qCur">1</span>/<span id="qTotal">10</span></span>
+    <span>Acertos: <span id="qAcertos">0</span></span>
+    <span class="streak">Sequência: <span id="qStreak">0</span></span>
+  </div>
+  <div class="prompt-box" id="qPrompt"></div>
+  <div id="qFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="qNextBtn" onclick="quizNext()" style="display:none;">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ RESULTS ═══ -->
+<div id="quiz-results" class="screen">
+  <button class="back-btn" onclick="showScreen('menu')">← Menu</button>
+  <h2>Resultado do Quiz</h2>
+  <div class="results-box" id="qResults"></div>
+  <button class="submit-btn" onclick="showScreen('menu')" style="display:block;margin:0 auto;">Voltar ao Menu</button>
+</div>
+
+<!-- ═══ DESAFIO ═══ -->
+<div id="desafio" class="screen">
+  <button class="back-btn" onclick="showScreen('menu')">← Menu</button>
+  <h2>Desafio — Decline a palavra inteira</h2>
+  <p class="hint">Preencha todos os 12 campos e envie. Macrons não são necessários.</p>
+  <div class="prompt-box" id="desafioWord"></div>
+  <div class="challenge-grid" id="desafioGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="desafioSubmit" onclick="checkDesafio()">Verificar</button>
+  </div>
+  <div id="desafioResults" style="margin-top:16px;"></div>
+</div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

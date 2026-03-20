@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Geometry ---
+\usepackage[margin=2cm, top=2.5cm, bottom=2cm, headheight=22pt]{geometry}
+
+% --- Language ---
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% --- Fonts ---
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage{inconsolata}
+
+% --- Colors ---
+\usepackage[table]{xcolor}
+\definecolor{headerblue}{HTML}{2C3E50}
+\definecolor{headerbg}{HTML}{D5E8F0}
+\definecolor{rowalt}{HTML}{F2F7FA}
+\definecolor{notebg}{HTML}{FFF8E7}
+\definecolor{noteborder}{HTML}{E6C84C}
+\definecolor{rulegray}{HTML}{CCCCCC}
+\definecolor{sectioncolor}{HTML}{1A5276}
+\definecolor{subsectioncolor}{HTML}{2E86C1}
+
+% --- Tables ---
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{colortbl}
+
+% Table styling: header row colored, alternating rows
+\setlength{\arrayrulewidth}{0.4pt}
+\arrayrulecolor{rulegray}
+
+% Redefine booktabs rules for grid style
+\renewcommand{\toprule}{\arrayrulecolor{headerblue}\hline\arrayrulecolor{rulegray}}
+\renewcommand{\midrule}{\arrayrulecolor{headerblue}\hline\arrayrulecolor{rulegray}}
+\renewcommand{\bottomrule}{\arrayrulecolor{headerblue}\hline\arrayrulecolor{rulegray}}
+
+% --- Prevent table page breaks ---
+\usepackage{float}
+
+% --- Section styling ---
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{sectioncolor}}
+  {\thesection}{0.5em}{}
+  [\vspace{0.3em}{\color{sectioncolor}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{subsectioncolor}}
+  {\thesubsection}{0.5em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries\color{subsectioncolor}}
+  {\thesubsubsection}{0.5em}{}
+
+\titlespacing*{\section}{0pt}{1.5em}{0.8em}
+\titlespacing*{\subsection}{0pt}{1.2em}{0.5em}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.3em}
+
+% --- Blockquote (nota) styling ---
+\usepackage{mdframed}
+\usepackage{etoolbox}
+
+% --- Hyperlinks ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=sectioncolor,
+  urlcolor=sectioncolor,
+}
+
+% --- Header/Footer ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{rulegray}\textit{Declinationes Latinae}}
+\fancyhead[R]{\small\color{rulegray}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{rulegray}\leaders\hrule height \headrulewidth\hfill}}
+\fancyfoot{}
+
+% --- No paragraph indent, small skip ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+
+% --- Title ---
+\providecommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+% Pandoc tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\begin{document}
+
+$if(title)$
+\begin{center}
+  {\LARGE\bfseries\color{sectioncolor} $title$}\\[0.3em]
+  {\color{rulegray}\rule{0.4\textwidth}{1pt}}
+\end{center}
+\vspace{1em}
+$endif$
+
+$body$
+
+\end{document}
