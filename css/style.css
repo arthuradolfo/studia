@@ -94,8 +94,8 @@ h2 {
   transition: background 0.15s, border-color 0.15s;
 }
 .menu-btn:hover { background: var(--bg3); border-left-color: var(--gold-bright); }
-.menu-btn .num { color: var(--gold); font-weight: bold; margin-right: 8px; }
-.menu-btn .desc { color: var(--text-dim); font-size: 0.85rem; display: block; margin-top: 2px; margin-left: 24px; }
+.menu-btn .num { color: var(--gold); font-weight: bold; display: inline-block; width: 28px; text-align: right; margin-right: 8px; }
+.menu-btn .desc { color: var(--text-dim); font-size: 0.85rem; display: block; margin-top: 2px; margin-left: 36px; }
 .word-count { text-align: center; color: var(--text-dim); font-size: 0.8rem; margin-top: 12px; }
 
 /* Back button */
@@ -458,7 +458,58 @@ h2 {
 /* Responsive */
 @media (max-width: 500px) {
   .challenge-grid { grid-template-columns: 1fr; }
+  .adj-challenge-grid { grid-template-columns: 1fr; }
   .challenge-row label { width: 80px; font-size: 0.75rem; }
   h1 { font-size: 1.1rem; }
   .menu-btn { padding: 12px; font-size: 0.9rem; }
+  .adj-table th, .adj-table td { padding: 2px 4px; font-size: 0.75rem; }
+}
+
+/* ═══ Content menu (Level 1) — larger buttons ═══ */
+.content-btn {
+  padding: 18px 20px;
+  font-size: 1.05rem;
+  border-left-width: 4px;
+}
+.content-btn .desc { margin-left: 28px; }
+
+/* ═══ Adjective table — 4 columns (Casus + M + F + N) ═══ */
+.adj-table { font-size: 0.82rem; }
+.adj-table th { font-size: 0.75rem; }
+.adj-table .num-header td {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+}
+
+/* ═══ Adjective challenge grid — 3 columns ═══ */
+.adj-challenge-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.adj-challenge-grid .num-label {
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 8px 8px 2px;
+  text-align: center;
+}
+
+/* ═══ Concordance — dual input row ═══ */
+.concordance-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.conc-field {
+  flex: 1;
+  min-width: 120px;
+}
+.conc-field label {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+.conc-field .answer-input {
+  width: 100%;
 }

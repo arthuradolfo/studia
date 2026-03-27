@@ -6,7 +6,7 @@ import { registerTranslation } from '../i18n.js';
 
 registerTranslation('pt', {
   // ─── App title ───
-  "app.title": "DECLINATIONES LATINAE",
+  "app.title": "STUDIA LATINA",
   "app.subtitle": "Drill de Memorização",
 
   // ─── Theme / controls ───
@@ -96,6 +96,92 @@ registerTranslation('pt', {
   "prompt.caso": "Caso:",
   "prompt.numero": "Número:",
   "prompt.declinatio": "{0}ª Declinatio, {1}",
+  "prompt.gender": "Gênero:",
+
+  // ─── Content menu ───
+  "content.nomina": "Nomina",
+  "content.nomina.desc": "Substantivos declinados (5 declinações)",
+  "content.adjectiva": "Adjectiva",
+  "content.adjectiva.desc": "Adjetivos de 1ª e 2ª classe",
+  "content.praepositiones": "Praepositiones",
+  "content.praepositiones.desc": "Preposições com acusativo e ablativo",
+  "nav.back.content": "← Conteúdo",
+
+  // ─── Adjective menu ───
+  "adj.menu.study.desc": "Ver tabelas de declinação (M/F/N)",
+  "adj.menu.practice.desc": "Preencher formas de adjetivos com gênero alvo",
+  "adj.menu.quiz.desc": "Perguntas de adjetivos com pontuação",
+  "adj.menu.challenge.desc": "Declinar o adjetivo inteiro (36 campos: M/F/N)",
+  "adj.menu.concordance": "Concordância",
+  "adj.menu.concordance.desc": "Declinar substantivo + adjetivo juntos",
+  "adj.wordcount": "{0} adjetivos · {1} paradigmas · {2} extras",
+
+  // ─── Adjective study ───
+  "adj.study.title": "Estudo — Tabelas de Adjetivos",
+  "adj.study.class": "{0}ª Classe",
+  "adj.study.card.title": "{0}ª Classe — {1}",
+  "adj.study.note.general": "Nota geral ({0}ª classe):",
+
+  // ─── Adjective practice ───
+  "adj.practice.title": "Prática — Adjetivos",
+
+  // ─── Adjective quiz ───
+  "adj.quiz.setup.title": "Quiz de Adjetivos — Configuração",
+  "adj.quiz.title": "Quiz — Adjetivos",
+
+  // ─── Adjective challenge ───
+  "adj.challenge.title": "Desafio — Decline o adjetivo inteiro",
+  "adj.challenge.hint": "Preencha todos os 36 campos (M/F/N) e envie. Macrons não são necessários.",
+
+  // ─── Concordance ───
+  "conc.title": "Concordância — Substantivo + Adjetivo",
+  "conc.hint": "Decline o substantivo e o adjetivo para concordar em caso, gênero e número.",
+  "conc.noun": "Substantivum:",
+  "conc.adj": "Adjectivum:",
+
+  // ─── Preposition menu ───
+  "prep.menu.study.desc": "Tabela de referência: preposições e seus casos",
+  "prep.menu.practice.desc": "Identificar caso e declinar após preposição",
+  "prep.menu.quiz.desc": "Quiz de preposições com pontuação",
+  "prep.wordcount": "{0} preposições",
+
+  // ─── Preposition study ───
+  "prep.study.title": "Estudo — Preposições",
+  "prep.acc.title": "Praepositiones cum Accusativo",
+  "prep.abl.title": "Praepositiones cum Ablativo",
+  "prep.col.prep": "Preposição",
+  "prep.col.meaning": "Significado / Função",
+
+  // ─── Preposition meanings ───
+  "prep.meaning.direction": "para dentro de (direção)",
+  "prep.meaning.toward": "até, para perto de",
+  "prep.meaning.through": "através de, por",
+  "prep.meaning.after": "depois de, atrás de",
+  "prep.meaning.between": "entre",
+  "prep.meaning.at_near": "junto a, entre",
+  "prep.meaning.before": "antes de, diante de",
+  "prep.meaning.against": "contra",
+  "prep.meaning.across": "através de, para além de",
+  "prep.meaning.because_of": "por causa de, em direção a",
+  "prep.meaning.above": "acima de, sobre",
+  "prep.meaning.location": "em, dentro de (lugar)",
+  "prep.meaning.out_of": "de dentro de, a partir de",
+  "prep.meaning.from_by": "de, a partir de, por (agente)",
+  "prep.meaning.down_from": "de cima para baixo, sobre",
+  "prep.meaning.with": "com (companhia/modo)",
+  "prep.meaning.without": "sem",
+  "prep.meaning.for_behalf": "diante de, em favor de, em vez de",
+  "prep.meaning.in_front": "diante de, em comparação com",
+  "prep.meaning.under": "sob, debaixo de (lugar)",
+
+  // ─── Preposition practice ───
+  "prep.practice.title": "Prática — Preposições",
+  "prep.which_case": "Qual caso esta preposição rege?",
+  "prep.give_form": "Dê a forma correta do substantivo:",
+
+  // ─── Preposition quiz ───
+  "prep.quiz.setup.title": "Quiz de Preposições — Configuração",
+  "prep.quiz.title": "Quiz — Preposições",
 
 },
 // ─── Word meanings ───
@@ -297,6 +383,57 @@ registerTranslation('pt', {
   "canītiēs": "cabelo branco/velhice",
   "lūxuriēs": "luxúria",
   "māceriēs": "parede/cerca",
+  // ─── Adjective meanings ───
+  "magnus": "grande",
+  "miser": "infeliz/miserável",
+  "pulcher": "belo/bonito",
+  "bonus": "bom",
+  "malus": "mau/ruim",
+  "clārus": "claro/famoso",
+  "altus": "alto/profundo",
+  "longus": "longo",
+  "lātus": "largo",
+  "parvus": "pequeno",
+  "frigidus": "frio",
+  "grātus": "grato/agradável",
+  "impavidus": "destemido",
+  "bellicōsus": "belicoso/guerreiro",
+  "fēcundus": "fecundo/fértil",
+  "antīquus": "antigo",
+  "Latīnus": "latino",
+  "probus": "honesto/probo",
+  "tener": "tenro/delicado",
+  "līber": "livre",
+  "piger": "preguiçoso",
+  "asper": "áspero/rude",
+  "prosper": "próspero",
+  "niger": "negro",
+  "sacer": "sagrado",
+  "ācer": "agudo/penetrante",
+  "celer": "rápido/célere",
+  "celeber": "célebre/frequentado",
+  "campester": "campestre",
+  "alacer": "vivaz/animado",
+  "fortis": "forte/corajoso",
+  "gravis": "grave/pesado",
+  "brevis": "breve/curto",
+  "tristis": "triste",
+  "omnis": "todo/cada",
+  "nōbilis": "nobre",
+  "facilis": "fácil",
+  "ūtilis": "útil",
+  "dulcis": "doce",
+  "fidēlis": "fiel",
+  "admīrābilis": "admirável",
+  "notābilis": "notável",
+  "vehemēns": "veemente",
+  "prūdēns": "prudente",
+  "fēlīx": "feliz/afortunado",
+  "audāx": "audaz",
+  "simplex": "simples",
+  "clēmēns": "clemente",
+  "potēns": "poderoso",
+  "sapiēns": "sábio",
 },
 // ─── Grammatical notes ───
 {
@@ -324,4 +461,8 @@ registerTranslation('pt', {
 <tr><td>Abl. singular (neutro)</td><td><strong>-e</strong></td><td><strong>-ī</strong></td></tr>
 <tr><td>Nom./acus./voc. pl. (neutro)</td><td><strong>-a</strong></td><td><strong>-ia</strong></td></tr></table>
 Há ainda os chamados <strong>mistos</strong>: imparissilábicos cujo tema termina em duas ou mais consoantes antes do <em>-is</em> (e.g. <em>nox, noct-is</em>: /kt/), que adotam o gen. plural em <strong>-ium</strong> dos temas em -i, mesmo sendo imparissilábicos. <small>(Allen &amp; Greenough, §54–78; Faria; Ernout &amp; Thomas)</small>`,
+
+  "adj_I": `Os adjetivos de <strong>1ª classe</strong> seguem a 1ª e 2ª declinações. São todos <strong>triformes</strong>, com três formas no nominativo singular (M/F/N): <em>magnus, magna, magnum</em>. O masculino segue a 2ª declinação (-us ou -er), o feminino a 1ª (-a), e o neutro a 2ª (-um). <strong>Atenção:</strong> o adjetivo concorda com o substantivo em caso, gênero e número, mas <em>não</em> necessariamente em declinação (e.g. <em>nauta bonus</em>: subst. 1ª decl. + adj. 2ª decl.). <small>(Allen &amp; Greenough, §110–113)</small>`,
+
+  "adj_II": `Os adjetivos de <strong>2ª classe</strong> seguem a 3ª declinação (temas em -i). Possuem 3 particularidades: ablativo singular em <strong>-ī</strong> (não -e), genitivo plural em <strong>-ium</strong> (não -um), e nominativo/acusativo/vocativo plural dos neutros em <strong>-ia</strong> (não -a). Dividem-se em: <strong>triformes</strong> (3 formas no nom.sg.: <em>ācer, ācris, ācre</em>), <strong>biformes</strong> (2 formas: <em>fortis, forte</em> — M/F iguais) e <strong>uniformes</strong> (1 forma: <em>prūdēns</em> — todos os gêneros iguais no nom.sg.). <small>(Allen &amp; Greenough, §114–117)</small>`,
 });

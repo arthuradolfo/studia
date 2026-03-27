@@ -5,7 +5,7 @@
 export const CASES = ["Nominativus","Genitivus","Dativus","Accusativus","Vocativus","Ablativus"];
 export const NUMBERS = ["Singularis","Pluralis"];
 
-function _f(ns,gs,ds,acs,vs,ab,np,gp,dp,acp,vp,abp) {
+export function _f(ns,gs,ds,acs,vs,ab,np,gp,dp,acp,vp,abp) {
   return {
     "Nominativus_Singularis":ns,"Genitivus_Singularis":gs,"Dativus_Singularis":ds,
     "Accusativus_Singularis":acs,"Vocativus_Singularis":vs,"Ablativus_Singularis":ab,

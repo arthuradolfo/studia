@@ -6,7 +6,7 @@ import { registerTranslation } from '../i18n.js';
 
 registerTranslation('en', {
   // ─── App title ───
-  "app.title": "DECLINATIONES LATINAE",
+  "app.title": "STUDIA LATINA",
   "app.subtitle": "Memorization Drill",
 
   // ─── Theme / controls ───
@@ -96,6 +96,92 @@ registerTranslation('en', {
   "prompt.caso": "Case:",
   "prompt.numero": "Number:",
   "prompt.declinatio": "{0}th Declinatio, {1}",
+  "prompt.gender": "Gender:",
+
+  // ─── Content menu ───
+  "content.nomina": "Nomina",
+  "content.nomina.desc": "Declined nouns (5 declensions)",
+  "content.adjectiva": "Adjectiva",
+  "content.adjectiva.desc": "1st and 2nd class adjectives",
+  "content.praepositiones": "Praepositiones",
+  "content.praepositiones.desc": "Prepositions with accusative and ablative",
+  "nav.back.content": "← Content",
+
+  // ─── Adjective menu ───
+  "adj.menu.study.desc": "View declension tables (M/F/N)",
+  "adj.menu.practice.desc": "Fill in adjective forms with target gender",
+  "adj.menu.quiz.desc": "Adjective questions with scoring",
+  "adj.menu.challenge.desc": "Decline the entire adjective (36 fields: M/F/N)",
+  "adj.menu.concordance": "Agreement",
+  "adj.menu.concordance.desc": "Decline noun + adjective together",
+  "adj.wordcount": "{0} adjectives · {1} paradigms · {2} extra",
+
+  // ─── Adjective study ───
+  "adj.study.title": "Study — Adjective Tables",
+  "adj.study.class": "{0} Class",
+  "adj.study.card.title": "{0} Class — {1}",
+  "adj.study.note.general": "General note ({0} class):",
+
+  // ─── Adjective practice ───
+  "adj.practice.title": "Practice — Adjectives",
+
+  // ─── Adjective quiz ───
+  "adj.quiz.setup.title": "Adjective Quiz — Setup",
+  "adj.quiz.title": "Quiz — Adjectives",
+
+  // ─── Adjective challenge ───
+  "adj.challenge.title": "Challenge — Decline the entire adjective",
+  "adj.challenge.hint": "Fill in all 36 fields (M/F/N) and submit. Macrons are not required.",
+
+  // ─── Concordance ───
+  "conc.title": "Agreement — Noun + Adjective",
+  "conc.hint": "Decline the noun and adjective to agree in case, gender, and number.",
+  "conc.noun": "Substantivum:",
+  "conc.adj": "Adjectivum:",
+
+  // ─── Preposition menu ───
+  "prep.menu.study.desc": "Reference table: prepositions and their cases",
+  "prep.menu.practice.desc": "Identify case and decline after preposition",
+  "prep.menu.quiz.desc": "Preposition quiz with scoring",
+  "prep.wordcount": "{0} prepositions",
+
+  // ─── Preposition study ───
+  "prep.study.title": "Study — Prepositions",
+  "prep.acc.title": "Praepositiones cum Accusativo",
+  "prep.abl.title": "Praepositiones cum Ablativo",
+  "prep.col.prep": "Preposition",
+  "prep.col.meaning": "Meaning / Function",
+
+  // ─── Preposition meanings ───
+  "prep.meaning.direction": "into (direction)",
+  "prep.meaning.toward": "to, toward",
+  "prep.meaning.through": "through, during",
+  "prep.meaning.after": "after, behind",
+  "prep.meaning.between": "between, among",
+  "prep.meaning.at_near": "at, near, among",
+  "prep.meaning.before": "before, in front of",
+  "prep.meaning.against": "against",
+  "prep.meaning.across": "across, beyond",
+  "prep.meaning.because_of": "because of, toward",
+  "prep.meaning.above": "above, over",
+  "prep.meaning.location": "in, at (location)",
+  "prep.meaning.out_of": "out of, from",
+  "prep.meaning.from_by": "from, by (agent)",
+  "prep.meaning.down_from": "down from, about",
+  "prep.meaning.with": "with (company/manner)",
+  "prep.meaning.without": "without",
+  "prep.meaning.for_behalf": "before, for, instead of",
+  "prep.meaning.in_front": "before, in comparison with",
+  "prep.meaning.under": "under (location)",
+
+  // ─── Preposition practice ───
+  "prep.practice.title": "Practice — Prepositions",
+  "prep.which_case": "Which case does this preposition govern?",
+  "prep.give_form": "Give the correct noun form:",
+
+  // ─── Preposition quiz ───
+  "prep.quiz.setup.title": "Preposition Quiz — Setup",
+  "prep.quiz.title": "Quiz — Prepositions",
 
 },
 // ─── Word meanings ───
@@ -297,6 +383,57 @@ registerTranslation('en', {
   "canītiēs": "grey hair/old age",
   "lūxuriēs": "luxury/excess",
   "māceriēs": "wall/fence",
+  // ─── Adjective meanings ───
+  "magnus": "great/large",
+  "miser": "wretched/unhappy",
+  "pulcher": "beautiful/handsome",
+  "bonus": "good",
+  "malus": "bad/evil",
+  "clārus": "clear/famous",
+  "altus": "high/deep",
+  "longus": "long",
+  "lātus": "wide/broad",
+  "parvus": "small",
+  "frigidus": "cold",
+  "grātus": "pleasing/grateful",
+  "impavidus": "fearless",
+  "bellicōsus": "warlike",
+  "fēcundus": "fertile/fruitful",
+  "antīquus": "ancient",
+  "Latīnus": "Latin",
+  "probus": "honest/upright",
+  "tener": "tender/delicate",
+  "līber": "free",
+  "piger": "lazy/sluggish",
+  "asper": "rough/harsh",
+  "prosper": "prosperous",
+  "niger": "black",
+  "sacer": "sacred/holy",
+  "ācer": "sharp/keen",
+  "celer": "swift/fast",
+  "celeber": "famous/frequented",
+  "campester": "level/flat",
+  "alacer": "lively/eager",
+  "fortis": "strong/brave",
+  "gravis": "heavy/serious",
+  "brevis": "short/brief",
+  "tristis": "sad/gloomy",
+  "omnis": "all/every",
+  "nōbilis": "noble",
+  "facilis": "easy",
+  "ūtilis": "useful",
+  "dulcis": "sweet",
+  "fidēlis": "faithful",
+  "admīrābilis": "admirable",
+  "notābilis": "notable",
+  "vehemēns": "vehement",
+  "prūdēns": "prudent/wise",
+  "fēlīx": "happy/lucky",
+  "audāx": "bold/daring",
+  "simplex": "simple",
+  "clēmēns": "merciful/gentle",
+  "potēns": "powerful",
+  "sapiēns": "wise",
 },
 // ─── Grammatical notes ───
 {
@@ -324,4 +461,8 @@ registerTranslation('en', {
 <tr><td>Abl. singular (neuter)</td><td><strong>-e</strong></td><td><strong>-ī</strong></td></tr>
 <tr><td>Nom./acc./voc. pl. (neuter)</td><td><strong>-a</strong></td><td><strong>-ia</strong></td></tr></table>
 There are also the so-called <strong>mixed</strong> nouns: imparisyllabic nouns whose stem ends in two or more consonants before the <em>-is</em> (e.g. <em>nox, noct-is</em>: /kt/), which adopt the i-stem genitive plural <strong>-ium</strong>, despite being imparisyllabic. <small>(Allen &amp; Greenough, §54–78; Faria; Ernout &amp; Thomas)</small>`,
+
+  "adj_I": `<strong>1st class</strong> adjectives follow the 1st and 2nd declensions. They are all <strong>triform</strong>, with three nominative singular forms (M/F/N): <em>magnus, magna, magnum</em>. The masculine follows the 2nd declension (-us or -er), the feminine the 1st (-a), and the neuter the 2nd (-um). <strong>Note:</strong> the adjective agrees with the noun in case, gender, and number, but <em>not</em> necessarily in declension (e.g. <em>nauta bonus</em>: 1st decl. noun + 2nd decl. adj.). <small>(Allen &amp; Greenough, §110–113)</small>`,
+
+  "adj_II": `<strong>2nd class</strong> adjectives follow the 3rd declension (i-stems). They have 3 key features: ablative singular in <strong>-ī</strong> (not -e), genitive plural in <strong>-ium</strong> (not -um), and neuter nominative/accusative/vocative plural in <strong>-ia</strong> (not -a). They are divided into: <strong>triform</strong> (3 nom.sg. forms: <em>ācer, ācris, ācre</em>), <strong>biform</strong> (2 forms: <em>fortis, forte</em> — M/F identical) and <strong>uniform</strong> (1 form: <em>prūdēns</em> — all genders identical in nom.sg.). <small>(Allen &amp; Greenough, §114–117)</small>`,
 });

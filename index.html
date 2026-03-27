@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Declinationes Latinae — Drill</title>
+<title>Studia Latina — Drill</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,10 +16,28 @@
   <button class="zoom-btn" onclick="toggleLang()" id="langBtn" title="Language">EN</button>
 </div>
 
-<h1><span data-i18n="app.title">DECLINATIONES LATINAE</span><small data-i18n="app.subtitle">Drill de Memorização</small></h1>
+<h1><span data-i18n="app.title">STUDIA LATINA</span><small data-i18n="app.subtitle">Drill de Memorização</small></h1>
 
-<!-- ═══ MENU ═══ -->
-<div id="menu" class="screen active">
+<!-- ═══ CONTENT MENU (Level 1) ═══ -->
+<div id="content-menu" class="screen active">
+  <button class="menu-btn content-btn" onclick="showScreen('menu-nomina')">
+    <span class="num">I.</span> <span data-i18n="content.nomina">Nomina</span>
+    <span class="desc" data-i18n="content.nomina.desc">Substantivos declinados (5 declinações)</span>
+  </button>
+  <button class="menu-btn content-btn" onclick="showScreen('menu-adjectiva')">
+    <span class="num">II.</span> <span data-i18n="content.adjectiva">Adjectiva</span>
+    <span class="desc" data-i18n="content.adjectiva.desc">Adjetivos de 1ª e 2ª classe</span>
+  </button>
+  <button class="menu-btn content-btn" onclick="showScreen('menu-praepositiones')">
+    <span class="num">III.</span> <span data-i18n="content.praepositiones">Praepositiones</span>
+    <span class="desc" data-i18n="content.praepositiones.desc">Preposições com acusativo e ablativo</span>
+  </button>
+</div>
+
+<!-- ═══ NOMINA MENU (Level 2) ═══ -->
+<div id="menu-nomina" class="screen">
+  <button class="back-btn" onclick="showScreen('content-menu')" data-i18n="nav.back.content">← Conteúdo</button>
+  <h2 data-i18n="content.nomina">Nomina</h2>
   <button class="menu-btn" onclick="showScreen('estudo')">
     <span class="num" data-i18n="menu.num.1">I.</span> <span data-i18n="menu.study">Estudo</span>
     <span class="desc" data-i18n="menu.study.desc">Ver tabelas completas das declinações</span>
@@ -39,17 +57,63 @@
   <div class="word-count" id="wordCount"></div>
 </div>
 
-<!-- ═══ ESTUDO ═══ -->
+<!-- ═══ ADJECTIVA MENU (Level 2) ═══ -->
+<div id="menu-adjectiva" class="screen">
+  <button class="back-btn" onclick="showScreen('content-menu')" data-i18n="nav.back.content">← Conteúdo</button>
+  <h2 data-i18n="content.adjectiva">Adjectiva</h2>
+  <button class="menu-btn" onclick="showScreen('adj-estudo')">
+    <span class="num" data-i18n="menu.num.1">I.</span> <span data-i18n="menu.study">Estudo</span>
+    <span class="desc" data-i18n="adj.menu.study.desc">Ver tabelas de declinação (M/F/N)</span>
+  </button>
+  <button class="menu-btn" onclick="startAdjPratica()">
+    <span class="num" data-i18n="menu.num.2">II.</span> <span data-i18n="menu.practice">Prática</span>
+    <span class="desc" data-i18n="adj.menu.practice.desc">Preencher formas de adjetivos com gênero alvo</span>
+  </button>
+  <button class="menu-btn" onclick="showScreen('adj-quiz-setup')">
+    <span class="num" data-i18n="menu.num.3">III.</span> <span data-i18n="menu.quiz">Quiz</span>
+    <span class="desc" data-i18n="adj.menu.quiz.desc">Perguntas de adjetivos com pontuação</span>
+  </button>
+  <button class="menu-btn" onclick="startAdjDesafio()">
+    <span class="num" data-i18n="menu.num.4">IV.</span> <span data-i18n="menu.challenge">Desafio</span>
+    <span class="desc" data-i18n="adj.menu.challenge.desc">Declinar o adjetivo inteiro (36 campos: M/F/N)</span>
+  </button>
+  <button class="menu-btn" onclick="startConcordance()">
+    <span class="num">V.</span> <span data-i18n="adj.menu.concordance">Concordância</span>
+    <span class="desc" data-i18n="adj.menu.concordance.desc">Declinar substantivo + adjetivo juntos</span>
+  </button>
+  <div class="word-count" id="adjWordCount"></div>
+</div>
+
+<!-- ═══ PRAEPOSITIONES MENU (Level 2) ═══ -->
+<div id="menu-praepositiones" class="screen">
+  <button class="back-btn" onclick="showScreen('content-menu')" data-i18n="nav.back.content">← Conteúdo</button>
+  <h2 data-i18n="content.praepositiones">Praepositiones</h2>
+  <button class="menu-btn" onclick="showScreen('prep-estudo')">
+    <span class="num" data-i18n="menu.num.1">I.</span> <span data-i18n="menu.study">Estudo</span>
+    <span class="desc" data-i18n="prep.menu.study.desc">Tabela de referência: preposições e seus casos</span>
+  </button>
+  <button class="menu-btn" onclick="startPrepPratica()">
+    <span class="num" data-i18n="menu.num.2">II.</span> <span data-i18n="menu.practice">Prática</span>
+    <span class="desc" data-i18n="prep.menu.practice.desc">Identificar caso e declinar após preposição</span>
+  </button>
+  <button class="menu-btn" onclick="showScreen('prep-quiz-setup')">
+    <span class="num" data-i18n="menu.num.3">III.</span> <span data-i18n="menu.quiz">Quiz</span>
+    <span class="desc" data-i18n="prep.menu.quiz.desc">Quiz de preposições com pontuação</span>
+  </button>
+  <div class="word-count" id="prepWordCount"></div>
+</div>
+
+<!-- ═══ ESTUDO (Nomina) ═══ -->
 <div id="estudo" class="screen">
-  <button class="back-btn" onclick="showScreen('menu')" data-i18n="nav.back">← Menu</button>
+  <button class="back-btn" onclick="showScreen('menu-nomina')" data-i18n="nav.back">← Menu</button>
   <h2 data-i18n="study.title">Estudo — Tabelas Completas</h2>
   <div class="dec-selector" id="decSelector"></div>
   <div id="tables"></div>
 </div>
 
-<!-- ═══ PRÁTICA ═══ -->
+<!-- ═══ PRÁTICA (Nomina) ═══ -->
 <div id="pratica" class="screen">
-  <button class="back-btn" onclick="showScreen('menu')" data-i18n="nav.back">← Menu</button>
+  <button class="back-btn" onclick="showScreen('menu-nomina')" data-i18n="nav.back">← Menu</button>
   <h2 data-i18n="practice.title">Prática — Preencha a forma correta</h2>
   <p class="hint" data-i18n="practice.hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
   <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
@@ -64,9 +128,9 @@
   </div>
 </div>
 
-<!-- ═══ QUIZ SETUP ═══ -->
+<!-- ═══ QUIZ SETUP (Nomina) ═══ -->
 <div id="quiz-setup" class="screen">
-  <button class="back-btn" onclick="showScreen('menu')" data-i18n="nav.back">← Menu</button>
+  <button class="back-btn" onclick="showScreen('menu-nomina')" data-i18n="nav.back">← Menu</button>
   <h2 data-i18n="quiz.setup.title">Quiz — Configuração</h2>
   <div class="num-input-row">
     <label data-i18n="quiz.setup.label">Número de perguntas:</label>
@@ -79,9 +143,9 @@
   <button class="submit-btn" onclick="startQuiz()" data-i18n="quiz.setup.start">Iniciar Quiz</button>
 </div>
 
-<!-- ═══ QUIZ ═══ -->
+<!-- ═══ QUIZ (Nomina) ═══ -->
 <div id="quiz" class="screen">
-  <button class="back-btn" onclick="showScreen('menu')" data-i18n="nav.back">← Menu</button>
+  <button class="back-btn" onclick="showScreen('menu-nomina')" data-i18n="nav.back">← Menu</button>
   <h2 data-i18n="quiz.title">Quiz</h2>
   <p class="hint" data-i18n="quiz.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
   <div class="stats-bar">
@@ -96,17 +160,17 @@
   </div>
 </div>
 
-<!-- ═══ QUIZ RESULTS ═══ -->
+<!-- ═══ QUIZ RESULTS (Nomina) ═══ -->
 <div id="quiz-results" class="screen">
-  <button class="back-btn" onclick="showScreen('menu')" data-i18n="nav.back">← Menu</button>
+  <button class="back-btn" onclick="showScreen('menu-nomina')" data-i18n="nav.back">← Menu</button>
   <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
   <div class="results-box" id="qResults"></div>
-  <button class="submit-btn" onclick="showScreen('menu')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
+  <button class="submit-btn" onclick="showScreen('menu-nomina')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
 </div>
 
-<!-- ═══ DESAFIO ═══ -->
+<!-- ═══ DESAFIO (Nomina) ═══ -->
 <div id="desafio" class="screen">
-  <button class="back-btn" onclick="showScreen('menu')" data-i18n="nav.back">← Menu</button>
+  <button class="back-btn" onclick="showScreen('menu-nomina')" data-i18n="nav.back">← Menu</button>
   <h2 data-i18n="challenge.title">Desafio — Decline a palavra inteira</h2>
   <p class="hint" data-i18n="challenge.hint">Preencha todos os 12 campos e envie. Macrons não são necessários.</p>
   <div class="prompt-box" id="desafioWord"></div>
@@ -115,6 +179,171 @@
     <button class="submit-btn" id="desafioSubmit" onclick="checkDesafio()" data-i18n="challenge.submit">Verificar</button>
   </div>
   <div id="desafioResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- ADJECTIVA SCREENS                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<!-- ═══ ESTUDO (Adjectiva) ═══ -->
+<div id="adj-estudo" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="adj.study.title">Estudo — Tabelas de Adjetivos</h2>
+  <div class="dec-selector" id="adjDecSelector"></div>
+  <div id="adjTables"></div>
+</div>
+
+<!-- ═══ PRÁTICA (Adjectiva) ═══ -->
+<div id="adj-pratica" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="adj.practice.title">Prática — Adjetivos</h2>
+  <p class="hint" data-i18n="practice.hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="adjPrAcertos">0</span>/<span id="adjPrTotal">0</span></span>
+    <span id="adjPrPct"></span>
+  </div>
+  <div class="prompt-box" id="adjPrPrompt"></div>
+  <div id="adjPrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="adjPrNextBtn" onclick="window._adjPraticaNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ SETUP (Adjectiva) ═══ -->
+<div id="adj-quiz-setup" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="adj.quiz.setup.title">Quiz de Adjetivos — Configuração</h2>
+  <div class="num-input-row">
+    <label data-i18n="quiz.setup.label">Número de perguntas:</label>
+    <div class="num-spinner">
+      <button class="spin-btn" onclick="adjStepQuiz(-1)">&#9662;</button>
+      <input type="number" id="adjQuizNum" value="10" min="1" max="200">
+      <button class="spin-btn" onclick="adjStepQuiz(1)">&#9652;</button>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="startAdjQuiz()" data-i18n="quiz.setup.start">Iniciar Quiz</button>
+</div>
+
+<!-- ═══ QUIZ (Adjectiva) ═══ -->
+<div id="adj-quiz" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="adj.quiz.title">Quiz — Adjetivos</h2>
+  <p class="hint" data-i18n="quiz.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="quiz.question">Pergunta</span> <span id="adjQCur">1</span>/<span id="adjQTotal">10</span></span>
+    <span><span data-i18n="quiz.score">Acertos:</span> <span id="adjQAcertos">0</span></span>
+    <span class="streak"><span data-i18n="quiz.streak">Sequência:</span> <span id="adjQStreak">0</span></span>
+  </div>
+  <div class="prompt-box" id="adjQPrompt"></div>
+  <div id="adjQFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="adjQNextBtn" style="display:none;" data-i18n="quiz.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ RESULTS (Adjectiva) ═══ -->
+<div id="adj-quiz-results" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
+  <div class="results-box" id="adjQResults"></div>
+  <button class="submit-btn" onclick="showScreen('menu-adjectiva')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
+</div>
+
+<!-- ═══ DESAFIO (Adjectiva) ═══ -->
+<div id="adj-desafio" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="adj.challenge.title">Desafio — Decline o adjetivo inteiro</h2>
+  <p class="hint" data-i18n="adj.challenge.hint">Preencha todos os 36 campos (M/F/N) e envie. Macrons não são necessários.</p>
+  <div class="prompt-box" id="adjDesafioWord"></div>
+  <div class="challenge-grid adj-challenge-grid" id="adjDesafioGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="adjDesafioSubmit" data-i18n="challenge.submit">Verificar</button>
+  </div>
+  <div id="adjDesafioResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ CONCORDÂNCIA (Adjectiva) ═══ -->
+<div id="adj-concordance" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-adjectiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="conc.title">Concordância — Substantivo + Adjetivo</h2>
+  <p class="hint" data-i18n="conc.hint">Decline o substantivo e o adjetivo para concordar em caso, gênero e número.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="concAcertos">0</span>/<span id="concTotal">0</span></span>
+    <span id="concPct"></span>
+  </div>
+  <div class="prompt-box" id="concPrompt"></div>
+  <div id="concFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="concNextBtn" onclick="window._concNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- PRAEPOSITIONES SCREENS                                            -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<!-- ═══ ESTUDO (Praepositiones) ═══ -->
+<div id="prep-estudo" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-praepositiones')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="prep.study.title">Estudo — Preposições</h2>
+  <div id="prepTables"></div>
+</div>
+
+<!-- ═══ PRÁTICA (Praepositiones) ═══ -->
+<div id="prep-pratica" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-praepositiones')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="prep.practice.title">Prática — Preposições</h2>
+  <p class="hint" data-i18n="practice.hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="prepPrAcertos">0</span>/<span id="prepPrTotal">0</span></span>
+    <span id="prepPrPct"></span>
+  </div>
+  <div class="prompt-box" id="prepPrPrompt"></div>
+  <div id="prepPrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="prepPrNextBtn" onclick="window._prepPraticaNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ SETUP (Praepositiones) ═══ -->
+<div id="prep-quiz-setup" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-praepositiones')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="prep.quiz.setup.title">Quiz de Preposições — Configuração</h2>
+  <div class="num-input-row">
+    <label data-i18n="quiz.setup.label">Número de perguntas:</label>
+    <div class="num-spinner">
+      <button class="spin-btn" onclick="prepStepQuiz(-1)">&#9662;</button>
+      <input type="number" id="prepQuizNum" value="10" min="1" max="200">
+      <button class="spin-btn" onclick="prepStepQuiz(1)">&#9652;</button>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="startPrepQuiz()" data-i18n="quiz.setup.start">Iniciar Quiz</button>
+</div>
+
+<!-- ═══ QUIZ (Praepositiones) ═══ -->
+<div id="prep-quiz" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-praepositiones')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="prep.quiz.title">Quiz — Preposições</h2>
+  <div class="stats-bar">
+    <span><span data-i18n="quiz.question">Pergunta</span> <span id="prepQCur">1</span>/<span id="prepQTotal">10</span></span>
+    <span><span data-i18n="quiz.score">Acertos:</span> <span id="prepQAcertos">0</span></span>
+    <span class="streak"><span data-i18n="quiz.streak">Sequência:</span> <span id="prepQStreak">0</span></span>
+  </div>
+  <div class="prompt-box" id="prepQPrompt"></div>
+  <div id="prepQFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="prepQNextBtn" style="display:none;" data-i18n="quiz.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ RESULTS (Praepositiones) ═══ -->
+<div id="prep-quiz-results" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-praepositiones')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
+  <div class="results-box" id="prepQResults"></div>
+  <button class="submit-btn" onclick="showScreen('menu-praepositiones')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
 </div>
 
 </div>
