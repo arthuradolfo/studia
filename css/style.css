@@ -51,6 +51,7 @@ body {
   width: 100%;
   max-width: 720px;
   padding: 16px;
+  overflow-x: hidden;
 }
 h1 {
   font-family: var(--mono);
@@ -455,10 +456,9 @@ h2 {
 .zoom-btn:hover { border-color: var(--gold); color: var(--text); }
 .zoom-btn:active { background: var(--bg3); }
 
-/* Responsive */
+/* Responsive — phone */
 @media (max-width: 500px) {
   .challenge-grid { grid-template-columns: 1fr; }
-  .adj-challenge-grid { grid-template-columns: 1fr; }
   .challenge-row label { width: 80px; font-size: 0.75rem; }
   h1 { font-size: 1.1rem; }
   .menu-btn { padding: 12px; font-size: 0.9rem; }
@@ -481,16 +481,15 @@ h2 {
   font-size: 0.8rem;
 }
 
-/* ═══ Adjective challenge grid — 3 columns ═══ */
+/* ═══ Adjective challenge grid — single column, gender sections ═══ */
 .adj-challenge-grid {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 .adj-challenge-grid .num-label {
   color: var(--gold);
   font-size: 0.8rem;
   font-weight: bold;
   padding: 8px 8px 2px;
-  text-align: center;
 }
 
 /* ═══ Concordance — dual input row ═══ */
