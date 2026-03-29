@@ -452,6 +452,8 @@ registerTranslation('pt', {
   "mare": `Neutros de tema em -i diferem dos de tema em consoante em três pontos: nom./acus./voc. plural em <strong>-ia</strong> (não -a), genitivo plural em <strong>-ium</strong> (não -um), e ablativo singular em <strong>-ī</strong> (não -e). As terminações mais comuns no nominativo são <strong>-e</strong> (<em>mare, maris</em>), <strong>-al</strong> (<em>animal, animālis</em>; <em>tribūnal, tribūnālis</em>) e <strong>-ar</strong> (<em>exemplar, exemplāris</em>; <em>calcar, calcāris</em>). <small>(Allen &amp; Greenough, §68–69; Faria; Ernout &amp; Thomas)</small>`,
 
   "diēs": `<em>Diēs</em> pode ser masculino ou feminino no singular; no plural é sempre masculino. <small>(Allen &amp; Greenough, §97; Faria; Ernout &amp; Thomas)</small>`,
+
+  "tribus": `Alguns substantivos da 4ª declinação formam o dativo e ablativo plural em <strong>-ubus</strong> em vez de <strong>-ibus</strong>, para evitar confusão com formas da 3ª declinação. Os casos mais atestados são: <em>tribus, -ūs</em> (tribo) → <em>tribūbus</em>; <em>lacus, -ūs</em> (lago) → <em>lacubus</em>; <em>arcus, -ūs</em> (arco) → <em>arcubus</em>; <em>artus, -ūs</em> (articulação) → <em>artubus</em>. <small>(Allen &amp; Greenough, §92; Faria; Ernout &amp; Thomas)</small>`,
 },
 // ─── Declension general notes ───
 {

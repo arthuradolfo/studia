@@ -230,6 +230,8 @@ Exemplo: **fructus, fructūs** (m.) — fruto
 | Vocativus    | fruct**us**   | fruct**ūs**    |
 | Ablativus    | fruct**ū**    | fruct**ibus**  |
 
+> Nota: Alguns substantivos da 4a declinação formam o dativo e ablativo plural em **-ubus** em vez de **-ibus**, para evitar confusão com formas da 3a declinação. Os casos mais atestados são: *tribus, -ūs* (tribo) → *tribūbus*; *lacus, -ūs* (lago) → *lacubus*; *arcus, -ūs* (arco) → *arcubus*; *artus, -ūs* (articulação) → *artubus*. (Allen & Greenough, §92; Faria; Ernout & Thomas)
+
 ### Neutra
 
 Exemplo: **cornū, cornūs** (n.) — chifre

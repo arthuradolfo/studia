@@ -452,6 +452,8 @@ registerTranslation('en', {
   "mare": `I-stem neuters differ from consonant-stem neuters in three ways: nom./acc./voc. plural in <strong>-ia</strong> (not -a), genitive plural in <strong>-ium</strong> (not -um), and ablative singular in <strong>-ī</strong> (not -e). The most common nominative endings are <strong>-e</strong> (<em>mare, maris</em>), <strong>-al</strong> (<em>animal, animālis</em>; <em>tribūnal, tribūnālis</em>), and <strong>-ar</strong> (<em>exemplar, exemplāris</em>; <em>calcar, calcāris</em>). <small>(Allen &amp; Greenough, §68–69; Faria; Ernout &amp; Thomas)</small>`,
 
   "diēs": `<em>Diēs</em> can be masculine or feminine in the singular; in the plural it is always masculine. <small>(Allen &amp; Greenough, §97; Faria; Ernout &amp; Thomas)</small>`,
+
+  "tribus": `Some 4th declension nouns form the dative and ablative plural in <strong>-ubus</strong> instead of <strong>-ibus</strong>, to avoid confusion with 3rd declension forms. The most attested cases are: <em>tribus, -ūs</em> (tribe) → <em>tribūbus</em>; <em>lacus, -ūs</em> (lake) → <em>lacubus</em>; <em>arcus, -ūs</em> (bow/arch) → <em>arcubus</em>; <em>artus, -ūs</em> (joint) → <em>artubus</em>. <small>(Allen &amp; Greenough, §92; Faria; Ernout &amp; Thomas)</small>`,
 },
 // ─── Declension general notes ───
 {

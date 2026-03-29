@@ -6,7 +6,7 @@ import {
   decl1, decl2_us, decl2_ius, decl2_er, decl2_ir, decl2_um,
   decl3_cons, decl3_mixed, decl3_i, decl3_i_turris,
   decl3_neut_e, decl3_neut_al, decl3_neut_ar,
-  decl4_us, decl4_u, decl5
+  decl4_us, decl4_ubus, decl4_u, decl5
 } from './declensions.js';
 
 // ─── WORDS (study paradigms) ───
@@ -176,7 +176,7 @@ export const EXTRA_WORDS = [
   ["III","Neutra (-ar)","pulvīnar","pulvīnāris","n.",decl3_neut_ar("pulvīnar","pulvīnār")],
   // IV DECLINATIO
   ["IV","Feminina (-us, -ūs)","manus","manūs","f.",decl4_us("man")],
-  ["IV","Masculina (-us, -ūs)","lacus","lacūs","m.",decl4_us("lac")],
+  ["IV","Masculina (-us, -ūs)","lacus","lacūs","m.",decl4_ubus("lac")],
   ["IV","Neutra (-ū, -ūs)","genū","genūs","n.",decl4_u("gen")],
   ["IV","Masculina (-us, -ūs)","exercitus","exercitūs","m.",decl4_us("exercit")],
   ["IV","Masculina (-us, -ūs)","senātus","senātūs","m.",decl4_us("senāt")],
@@ -191,7 +191,7 @@ export const EXTRA_WORDS = [
   ["IV","Masculina (-us, -ūs)","spiritus","spiritūs","m.",decl4_us("spirit")],
   ["IV","Masculina (-us, -ūs)","vultus","vultūs","m.",decl4_us("vult")],
   ["IV","Feminina (-us, -ūs)","domus","domūs","f.",decl4_us("dom")],
-  ["IV","Feminina (-us, -ūs)","tribus","tribūs","f.",decl4_us("trib")],
+  ["IV","Feminina (-us, -ūs)","tribus","tribūs","f.",decl4_ubus("trib")],
   ["IV","Feminina (-us, -ūs)","acus","acūs","f.",decl4_us("ac")],
   ["IV","Neutra (-ū, -ūs)","verū","verūs","n.",decl4_u("ver")],
   ["IV","Neutra (-ū, -ūs)","gelū","gelūs","n.",decl4_u("gel")],

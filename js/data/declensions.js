@@ -31,6 +31,7 @@ export function decl3_neut_e(nom,s){return _f(nom,s+"is",s+"ī",nom,nom,s+"ī",s
 export function decl3_neut_al(nom,s){return _f(nom,s+"is",s+"ī",nom,nom,s+"ī",s+"ia",s+"ium",s+"ibus",s+"ia",s+"ia",s+"ibus");}
 export function decl3_neut_ar(nom,s){return _f(nom,s+"is",s+"ī",nom,nom,s+"ī",s+"ia",s+"ium",s+"ibus",s+"ia",s+"ia",s+"ibus");}
 export function decl4_us(s){return _f(s+"us",s+"ūs",s+"uī",s+"um",s+"us",s+"ū",s+"ūs",s+"uum",s+"ibus",s+"ūs",s+"ūs",s+"ibus");}
+export function decl4_ubus(s){return _f(s+"us",s+"ūs",s+"uī",s+"um",s+"us",s+"ū",s+"ūs",s+"uum",s+"ubus",s+"ūs",s+"ūs",s+"ubus");}
 export function decl4_u(s){return _f(s+"ū",s+"ūs",s+"ū",s+"ū",s+"ū",s+"ū",s+"ua",s+"uum",s+"ibus",s+"ua",s+"ua",s+"ibus");}
 export function decl5(nom,s,gs,ds){
   const g=gs||(s+"eī");const d=ds||g;
