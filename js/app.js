@@ -23,6 +23,15 @@ import { startConcordance, concShow, concCheck, concNext, isConcWaiting } from '
 import { initPrepEstudo } from './modes/prep-study.js';
 import { startPrepPratica, prepPraticaShow, prepPraticaCheck, prepPraticaNext, isPrepPrWaiting } from './modes/prep-practice.js';
 import { prepStepQuiz, startPrepQuiz, prepQuizShow, prepQuizCheck, prepQuizNext, prepQuizEnd, isPrepQWaiting } from './modes/prep-quiz.js';
+// Verb modes
+import { ALL_VERBS, VERBS, EXTRA_VERBS } from './data/verbs.js';
+import { initVerbEstudo, _verbFilterTense } from './modes/verb-study.js';
+import { startVerbPratica, verbPraticaShow, verbPraticaCheck, verbPraticaNext, isVerbPrWaiting } from './modes/verb-practice.js';
+import { verbStepQuiz, startVerbQuiz, verbQuizShow, verbQuizCheck, verbQuizNext, verbQuizEnd, isVerbQWaiting } from './modes/verb-quiz.js';
+import { startVerbDesafio, checkVerbDesafio, getDesafioVerb } from './modes/verb-challenge.js';
+import { startVerbSynopsis, checkVerbSynopsis } from './modes/verb-synopsis.js';
+import { startVerbIdentify, verbIdentifyShow, verbIdentifyCheck, verbIdentifyNext, isVerbIdWaiting } from './modes/verb-identify.js';
+import { startVerbTranslate, verbTranslateShow, verbTranslateCheck, verbTranslateNext, isVerbTrWaiting } from './modes/verb-translate.js';
 
 // ─── Navigation ───
 export function showScreen(id) {
@@ -33,6 +42,7 @@ export function showScreen(id) {
   // Init screens that need rendering on entry
   if(id==='adj-estudo') initAdjEstudo();
   if(id==='prep-estudo') initPrepEstudo();
+  if(id==='verb-estudo') initVerbEstudo();
 }
 
 // ─── Language toggle ───
@@ -84,6 +94,18 @@ function refreshActiveScreen() {
     if (!isPrepQWaiting()) prepQuizShow();
   } else if (id === 'prep-quiz-results') {
     prepQuizEnd();
+  } else if (id === 'verb-estudo') {
+    initVerbEstudo();
+  } else if (id === 'verb-pratica') {
+    if (!isVerbPrWaiting()) verbPraticaShow();
+  } else if (id === 'verb-quiz') {
+    if (!isVerbQWaiting()) verbQuizShow();
+  } else if (id === 'verb-quiz-results') {
+    verbQuizEnd();
+  } else if (id === 'verb-tempus') {
+    if (!isVerbIdWaiting()) verbIdentifyShow();
+  } else if (id === 'verb-traducao') {
+    if (!isVerbTrWaiting()) verbTranslateShow();
   }
 }
 
@@ -135,6 +157,8 @@ function updateWordCounts() {
   if (awc) awc.textContent = t('adj.wordcount', ALL_ADJECTIVES.length, ADJ_PARADIGMS.length, ADJ_EXTRA.length);
   const pwc = document.getElementById('prepWordCount');
   if (pwc) pwc.textContent = t('prep.wordcount', PREPOSITIONS.length);
+  const vwc = document.getElementById('verbWordCount');
+  if (vwc) vwc.textContent = t('verb.wordcount', ALL_VERBS.length, VERBS.length, EXTRA_VERBS.length);
 }
 
 // ─── Expose functions to HTML onclick handlers ───
@@ -173,6 +197,25 @@ window.prepStepQuiz = prepStepQuiz;
 window.startPrepQuiz = startPrepQuiz;
 window._prepQuizCheck = prepQuizCheck;
 window._prepQuizNext = prepQuizNext;
+// Verba
+window.startVerbPratica = startVerbPratica;
+window._verbPraticaCheck = verbPraticaCheck;
+window._verbPraticaNext = verbPraticaNext;
+window.verbStepQuiz = verbStepQuiz;
+window.startVerbQuiz = startVerbQuiz;
+window._verbQuizCheck = verbQuizCheck;
+window._verbQuizNext = verbQuizNext;
+window.startVerbDesafio = startVerbDesafio;
+window.checkVerbDesafio = checkVerbDesafio;
+window.startVerbSynopsis = startVerbSynopsis;
+window.checkVerbSynopsis = checkVerbSynopsis;
+window.startVerbIdentify = startVerbIdentify;
+window._verbIdentifyCheck = verbIdentifyCheck;
+window._verbIdentifyNext = verbIdentifyNext;
+window.startVerbTranslate = startVerbTranslate;
+window._verbTranslateCheck = verbTranslateCheck;
+window._verbTranslateNext = verbTranslateNext;
+window._verbFilterTense = _verbFilterTense;
 
 // ─── Init ───
 updateThemeBtn();

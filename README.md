@@ -48,7 +48,15 @@ studia/
 
 ### Web
 
-Open `index.html` in a browser.
+The app uses ES modules and needs a local server:
+
+```bash
+npx serve .
+# or
+python3 -m http.server 8000
+```
+
+Then open [http://localhost:3000](http://localhost:3000) (serve) or [http://localhost:8000](http://localhost:8000) (python).
 
 ### CLI
 
