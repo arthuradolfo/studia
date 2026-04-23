@@ -183,6 +183,81 @@ registerTranslation('en', {
   "prep.quiz.setup.title": "Preposition Quiz — Setup",
   "prep.quiz.title": "Quiz — Prepositions",
 
+  // ─── Verb menu ───
+  "content.verba": "Verba",
+  "content.verba.desc": "Verb conjugations (Infectum and Perfectum)",
+  "verb.menu.study.desc": "View complete conjugation tables",
+  "verb.menu.practice.desc": "Conjugate random forms with feedback",
+  "verb.menu.quiz.desc": "Conjugation quiz with scoring",
+  "verb.menu.challenge.desc": "Conjugate all 6 forms of a tense",
+  "verb.menu.synopsis": "Synopsis",
+  "verb.menu.synopsis.desc": "Conjugate all 12 tenses for one person",
+  "verb.menu.identify": "Tempus",
+  "verb.menu.identify.desc": "Identify tense, person, and number",
+  "verb.menu.translate": "Trādūctiō",
+  "verb.menu.translate.desc": "Translate from English to Latin",
+  "verb.wordcount": "{0} verbs · {1} paradigms · {2} extra",
+
+  // ─── Verb study ───
+  "verb.study.title": "Study — Conjugation Tables",
+  "verb.study.conj": "{0} Conj.",
+  "verb.col.persona": "Persona",
+  "verb.conjugation": "Conjugation",
+  "verb.persona": "person",
+  "verb.conjugate": "Conjugate",
+  "verb.primitiva.title": "Tempora Prīmitīva",
+  "verb.primitiva.praesens": "1st sg. Praes. Ind.",
+  "verb.primitiva.infinitivus": "Infinītīvus",
+  "verb.primitiva.perfectum": "1st sg. Perf. Ind.",
+  "verb.primitiva.supinum": "Supīnum",
+
+  // ─── Verb tense names ───
+  "verb.tense.Praesens_Indicativus": "Praesēns Indicatīvī",
+  "verb.tense.Imperfectum_Indicativus": "Imperfectum Indicatīvī",
+  "verb.tense.Futurum_I": "Futūrum I",
+  "verb.tense.Praesens_Subiunctivus": "Praesēns Subiunctīvī",
+  "verb.tense.Imperfectum_Subiunctivus": "Imperfectum Subiunctīvī",
+  "verb.tense.Imperativus_Praesens": "Imperātīvus Praesēns",
+  "verb.tense.Imperativus_Futurus": "Imperātīvus Futūrus",
+  "verb.tense.Perfectum_Indicativus": "Perfectum Indicatīvī",
+  "verb.tense.Plusquamperfectum_Indicativus": "Plūsquamperfectum Indicatīvī",
+  "verb.tense.Futurum_II": "Futūrum II",
+  "verb.tense.Perfectum_Subiunctivus": "Perfectum Subiunctīvī",
+  "verb.tense.Plusquamperfectum_Subiunctivus": "Plūsquamperfectum Subiunctīvī",
+
+  // ─── Verb tense groups ───
+  "verb.tense.group.all": "All",
+  "verb.tense.group.infectum": "Infectum",
+  "verb.tense.group.perfectum": "Perfectum",
+
+  // ─── Verb practice/quiz ───
+  "verb.practice.title": "Practice — Verbs",
+  "verb.quiz.setup.title": "Verb Quiz — Setup",
+  "verb.quiz.title": "Quiz — Verbs",
+
+  // ─── Verb challenge ───
+  "verb.challenge.title": "Challenge — Conjugate the entire tense",
+  "verb.challenge.hint": "Fill in all 6 personal forms and submit. Macrons are not required.",
+  "verb.challenge.tense": "Tense",
+
+  // ─── Verb synopsis ───
+  "verb.synopsis.title": "Synopsis — All Tenses",
+  "verb.synopsis.hint": "Conjugate the verb in all 12 tenses for the given person.",
+  "verb.synopsis.prompt": "Conjugate in all tenses",
+
+  // ─── Verb identify ───
+  "verb.identify.title": "Tempus — Identification",
+  "verb.identify.hint": "Identify the tense, person, and number of the verb form.",
+  "verb.identify.prompt": "Identify this form:",
+  "verb.identify.tense": "Tense:",
+  "verb.identify.person": "Person:",
+  "verb.identify.number": "Number:",
+
+  // ─── Verb translate ───
+  "verb.translate.title": "Trādūctiō — Translation",
+  "verb.translate.hint": "Translate the phrase into Latin.",
+  "verb.translate.prompt": "Translate into Latin:",
+
 },
 // ─── Word meanings ───
 {
@@ -434,6 +509,36 @@ registerTranslation('en', {
   "clēmēns": "merciful/gentle",
   "potēns": "powerful",
   "sapiēns": "wise",
+  // ─── Verb meanings ───
+  "amō": "to love",
+  "deleō": "to destroy",
+  "legō": "to read",
+  "capiō": "to take/capture",
+  "audiō": "to hear",
+  "sum": "to be",
+  "cantō": "to sing",
+  "laudō": "to praise",
+  "vocō": "to call",
+  "portō": "to carry",
+  "pugnō": "to fight",
+  "habitō": "to inhabit",
+  "videō": "to see",
+  "moveō": "to move",
+  "habeō": "to have",
+  "timeō": "to fear",
+  "doceō": "to teach",
+  "moneō": "to warn",
+  "dūcō": "to lead",
+  "scrībō": "to write",
+  "mittō": "to send",
+  "dīcō": "to say",
+  "faciō": "to make/do",
+  "cupiō": "to desire",
+  "decipiō": "to deceive",
+  "veniō": "to come",
+  "sciō": "to know",
+  "sentiō": "to feel",
+  "dormiō": "to sleep",
 },
 // ─── Grammatical notes ───
 {
@@ -467,4 +572,10 @@ There are also the so-called <strong>mixed</strong> nouns: imparisyllabic nouns 
   "adj_I": `<strong>1st class</strong> adjectives follow the 1st and 2nd declensions. They are all <strong>triform</strong>, with three nominative singular forms (M/F/N): <em>magnus, magna, magnum</em>. The masculine follows the 2nd declension (-us or -er), the feminine the 1st (-a), and the neuter the 2nd (-um). <strong>Note:</strong> the adjective agrees with the noun in case, gender, and number, but <em>not</em> necessarily in declension (e.g. <em>nauta bonus</em>: 1st decl. noun + 2nd decl. adj.). <small>(Allen &amp; Greenough, §110–113)</small>`,
 
   "adj_II": `<strong>2nd class</strong> adjectives follow the 3rd declension (i-stems). They have 3 key features: ablative singular in <strong>-ī</strong> (not -e), genitive plural in <strong>-ium</strong> (not -um), and neuter nominative/accusative/vocative plural in <strong>-ia</strong> (not -a). They are divided into: <strong>triform</strong> (3 nom.sg. forms: <em>ācer, ācris, ācre</em>), <strong>biform</strong> (2 forms: <em>fortis, forte</em> — M/F identical) and <strong>uniform</strong> (1 form: <em>prūdēns</em> — all genders identical in nom.sg.). <small>(Allen &amp; Greenough, §114–117)</small>`,
+
+  "verb_Imperativus_Praesens": `2nd person only. Expresses direct, immediate commands: <em>amā!</em> (love!), <em>audī!</em> (hear!). <small>(Allen &amp; Greenough, §182)</small>`,
+
+  "verb_Imperativus_Futurus": `2nd and 3rd person only. Expresses commands to be carried out in the future or permanently. Common in legal texts (<em>Lēgēs XII Tabulārum</em>), wills, religious precepts, and recipes: <em>amātō</em> (thou shalt love / let him love). The 2nd and 3rd person singular are identical. <small>(Allen &amp; Greenough, §449)</small>`,
+
+  "verb_primitiva": `Every Latin verb is identified by four principal parts (<em>tempora prīmitīva</em>): the 1st person singular present indicative (infectum stem), the infinitive (identifies the conjugation), the 1st person singular perfect indicative (perfectum stem), and the supine (past participle and compound passive forms). <small>(Allen &amp; Greenough, §170–173)</small>`,
 });

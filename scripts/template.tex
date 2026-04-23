@@ -28,16 +28,18 @@
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{calc}
 \usepackage{colortbl}
+\newcounter{none}
 
 % Table styling: header row colored, alternating rows
 \setlength{\arrayrulewidth}{0.4pt}
-\arrayrulecolor{rulegray}
+\arrayrulecolor{headerblue}
 
-% Redefine booktabs rules for grid style
-\renewcommand{\toprule}{\arrayrulecolor{headerblue}\hline\arrayrulecolor{rulegray}}
-\renewcommand{\midrule}{\arrayrulecolor{headerblue}\hline\arrayrulecolor{rulegray}}
-\renewcommand{\bottomrule}{\arrayrulecolor{headerblue}\hline\arrayrulecolor{rulegray}}
+% Redefine booktabs rules as simple \hline (compatible with pandoc \noalign{})
+\renewcommand{\toprule}{\hline}
+\renewcommand{\midrule}{\hline}
+\renewcommand{\bottomrule}{\hline}
 
 % --- Prevent table page breaks ---
 \usepackage{float}

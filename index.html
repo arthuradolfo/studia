@@ -32,6 +32,10 @@
     <span class="num">III.</span> <span data-i18n="content.praepositiones">Praepositiones</span>
     <span class="desc" data-i18n="content.praepositiones.desc">Preposições com acusativo e ablativo</span>
   </button>
+  <button class="menu-btn content-btn" onclick="showScreen('menu-verba')">
+    <span class="num">IV.</span> <span data-i18n="content.verba">Verba</span>
+    <span class="desc" data-i18n="content.verba.desc">Conjugações verbais (Infectum et Perfectum)</span>
+  </button>
 </div>
 
 <!-- ═══ NOMINA MENU (Level 2) ═══ -->
@@ -344,6 +348,169 @@
   <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
   <div class="results-box" id="prepQResults"></div>
   <button class="submit-btn" onclick="showScreen('menu-praepositiones')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- VERBA SCREENS                                                     -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<!-- ═══ VERBA MENU (Level 2) ═══ -->
+<div id="menu-verba" class="screen">
+  <button class="back-btn" onclick="showScreen('content-menu')" data-i18n="nav.back.content">← Conteúdo</button>
+  <h2 data-i18n="content.verba">Verba</h2>
+  <button class="menu-btn" onclick="showScreen('verb-estudo')">
+    <span class="num" data-i18n="menu.num.1">I.</span> <span data-i18n="menu.study">Estudo</span>
+    <span class="desc" data-i18n="verb.menu.study.desc">Ver tabelas completas de conjugação</span>
+  </button>
+  <button class="menu-btn" onclick="startVerbPratica()">
+    <span class="num" data-i18n="menu.num.2">II.</span> <span data-i18n="menu.practice">Prática</span>
+    <span class="desc" data-i18n="verb.menu.practice.desc">Conjugar formas aleatórias com feedback</span>
+  </button>
+  <button class="menu-btn" onclick="showScreen('verb-quiz-setup')">
+    <span class="num" data-i18n="menu.num.3">III.</span> <span data-i18n="menu.quiz">Quiz</span>
+    <span class="desc" data-i18n="verb.menu.quiz.desc">Quiz de conjugação com pontuação</span>
+  </button>
+  <button class="menu-btn" onclick="startVerbDesafio()">
+    <span class="num" data-i18n="menu.num.4">IV.</span> <span data-i18n="menu.challenge">Desafio</span>
+    <span class="desc" data-i18n="verb.menu.challenge.desc">Conjugar todas as 6 formas de um tempo</span>
+  </button>
+  <button class="menu-btn" onclick="startVerbSynopsis()">
+    <span class="num">V.</span> <span data-i18n="verb.menu.synopsis">Synopsis</span>
+    <span class="desc" data-i18n="verb.menu.synopsis.desc">Conjugar os 10 tempos para uma pessoa</span>
+  </button>
+  <button class="menu-btn" onclick="startVerbIdentify()">
+    <span class="num">VI.</span> <span data-i18n="verb.menu.identify">Tempus</span>
+    <span class="desc" data-i18n="verb.menu.identify.desc">Identificar tempo, pessoa e número</span>
+  </button>
+  <button class="menu-btn" onclick="startVerbTranslate()">
+    <span class="num">VII.</span> <span data-i18n="verb.menu.translate">Trādūctiō</span>
+    <span class="desc" data-i18n="verb.menu.translate.desc">Traduzir do português/inglês para o latim</span>
+  </button>
+  <div class="word-count" id="verbWordCount"></div>
+</div>
+
+<!-- ═══ ESTUDO (Verba) ═══ -->
+<div id="verb-estudo" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.study.title">Estudo — Tabelas de Conjugação</h2>
+  <div class="dec-selector" id="verbTenseSelector"></div>
+  <div id="verbTables"></div>
+</div>
+
+<!-- ═══ PRÁTICA (Verba) ═══ -->
+<div id="verb-pratica" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.practice.title">Prática — Verbos</h2>
+  <p class="hint" data-i18n="practice.hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="verbPrAcertos">0</span>/<span id="verbPrTotal">0</span></span>
+    <span id="verbPrPct"></span>
+  </div>
+  <div class="prompt-box" id="verbPrPrompt"></div>
+  <div id="verbPrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="verbPrNextBtn" onclick="window._verbPraticaNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ SETUP (Verba) ═══ -->
+<div id="verb-quiz-setup" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.quiz.setup.title">Quiz de Verbos — Configuração</h2>
+  <div class="num-input-row">
+    <label data-i18n="quiz.setup.label">Número de perguntas:</label>
+    <div class="num-spinner">
+      <button class="spin-btn" onclick="verbStepQuiz(-1)">&#9662;</button>
+      <input type="number" id="verbQuizNum" value="10" min="1" max="200">
+      <button class="spin-btn" onclick="verbStepQuiz(1)">&#9652;</button>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="startVerbQuiz()" data-i18n="quiz.setup.start">Iniciar Quiz</button>
+</div>
+
+<!-- ═══ QUIZ (Verba) ═══ -->
+<div id="verb-quiz" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.quiz.title">Quiz — Verbos</h2>
+  <p class="hint" data-i18n="quiz.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="quiz.question">Pergunta</span> <span id="verbQCur">1</span>/<span id="verbQTotal">10</span></span>
+    <span><span data-i18n="quiz.score">Acertos:</span> <span id="verbQAcertos">0</span></span>
+    <span class="streak"><span data-i18n="quiz.streak">Sequência:</span> <span id="verbQStreak">0</span></span>
+  </div>
+  <div class="prompt-box" id="verbQPrompt"></div>
+  <div id="verbQFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="verbQNextBtn" style="display:none;" data-i18n="quiz.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ RESULTS (Verba) ═══ -->
+<div id="verb-quiz-results" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
+  <div class="results-box" id="verbQResults"></div>
+  <button class="submit-btn" onclick="showScreen('menu-verba')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
+</div>
+
+<!-- ═══ DESAFIO (Verba) ═══ -->
+<div id="verb-desafio" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.challenge.title">Desafio — Conjugue o tempo inteiro</h2>
+  <p class="hint" data-i18n="verb.challenge.hint">Preencha todas as 6 formas pessoais e envie. Macrons não são necessários.</p>
+  <div class="prompt-box" id="verbDesafioWord"></div>
+  <div class="challenge-grid" id="verbDesafioGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="verbDesafioSubmit" data-i18n="challenge.submit">Verificar</button>
+  </div>
+  <div id="verbDesafioResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ SYNOPSIS (Verba) ═══ -->
+<div id="verb-synopsis" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.synopsis.title">Synopsis — Todos os tempos</h2>
+  <p class="hint" data-i18n="verb.synopsis.hint">Conjugue o verbo nos 10 tempos para a pessoa indicada.</p>
+  <div class="prompt-box" id="verbSynopsisWord"></div>
+  <div class="challenge-grid" id="verbSynopsisGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="verbSynopsisSubmit" data-i18n="challenge.submit">Verificar</button>
+  </div>
+  <div id="verbSynopsisResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ TEMPUS / IDENTIFY (Verba) ═══ -->
+<div id="verb-tempus" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.identify.title">Tempus — Identificação</h2>
+  <p class="hint" data-i18n="verb.identify.hint">Identifique o tempo, a pessoa e o número da forma verbal.</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="verbIdAcertos">0</span>/<span id="verbIdTotal">0</span></span>
+    <span id="verbIdPct"></span>
+  </div>
+  <div class="prompt-box" id="verbIdPrompt"></div>
+  <div id="verbIdFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="verbIdNextBtn" onclick="window._verbIdentifyNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ TRĀDŪCTIŌ / TRANSLATE (Verba) ═══ -->
+<div id="verb-traducao" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-verba')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="verb.translate.title">Trādūctiō — Tradução</h2>
+  <p class="hint" data-i18n="verb.translate.hint">Traduza a frase para o latim.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="verbTrAcertos">0</span>/<span id="verbTrTotal">0</span></span>
+    <span id="verbTrPct"></span>
+  </div>
+  <div class="prompt-box" id="verbTrPrompt"></div>
+  <div id="verbTrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="verbTrNextBtn" onclick="window._verbTranslateNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
 </div>
 
 </div>

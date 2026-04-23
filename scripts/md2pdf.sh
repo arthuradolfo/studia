@@ -29,16 +29,23 @@ pandoc "$INPUT" \
   -V lang=pt-BR
 
 # Step 2: Add vertical lines to longtable column specs
-# {@{}lll@{}} -> {|l|l|l|}
+# Simple specs: {@{}lll@{}} -> {|l|l|l|}
 perl -i -pe '
   s/\{\@\{\}([lcr]+)\@\{\}\}/"{|" . join("|", split("", $1)) . "|}"/ge if /\\begin\{longtable\}/;
 ' "$TEX_TMP"
 
+# Step 2b: Handle multi-line proportional column specs (pandoc uses p{} columns for wide tables)
+# Just strip @{} markers — don't add | pipes since they break the width calculations.
+# Horizontal rules from \toprule/\midrule (redefined as \hline) provide the grid look.
+perl -i -0777 -pe '
+  s/(\\begin\{longtable\}\[\]\{)\@\{\}\n(.*?)\@\{\}\}/$1\n$2\}/gs;
+' "$TEX_TMP"
+
 # Step 3: Style table headers with colored background
-# After \toprule row, color the header row
+# After \toprule row, color the header row (handles both single-line and multi-line minipage headers)
 perl -i -0777 -pe '
   s/(\\toprule\\noalign\{\}\n)(.*?)(\\\\)\n(\\midrule)/
-    $1 . "\\rowcolor{headerbg}" . $2 . $3 . "\n" . $4/ge;
+    $1 . "\\rowcolor{headerbg}" . $2 . $3 . "\n" . $4/ges;
 ' "$TEX_TMP"
 
 # Step 4: Remove \endhead and \endlastfoot blocks (prevents duplicate headers)
