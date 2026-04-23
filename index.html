@@ -36,6 +36,10 @@
     <span class="num">IV.</span> <span data-i18n="content.verba">Verba</span>
     <span class="desc" data-i18n="content.verba.desc">Conjugações verbais (Infectum et Perfectum)</span>
   </button>
+  <button class="menu-btn content-btn" onclick="showScreen('menu-pronomina')">
+    <span class="num">V.</span> <span data-i18n="content.pronomina">Pronomina</span>
+    <span class="desc" data-i18n="content.pronomina.desc">Pronomes pessoais, possessivos, demonstrativos e relativos</span>
+  </button>
 </div>
 
 <!-- ═══ NOMINA MENU (Level 2) ═══ -->
@@ -511,6 +515,111 @@
   <div style="text-align:center;margin-top:12px;">
     <button class="submit-btn" id="verbTrNextBtn" onclick="window._verbTranslateNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
   </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- PRONOMINA SCREENS                                                -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<!-- ═══ PRONOMINA MENU (Level 2) ═══ -->
+<div id="menu-pronomina" class="screen">
+  <button class="back-btn" onclick="showScreen('content-menu')" data-i18n="nav.back.content">← Conteúdo</button>
+  <h2 data-i18n="content.pronomina">Pronomina</h2>
+  <button class="menu-btn" onclick="showScreen('pron-estudo')">
+    <span class="num" data-i18n="menu.num.1">I.</span> <span data-i18n="menu.study">Estudo</span>
+    <span class="desc" data-i18n="pron.menu.study.desc">Ver tabelas de declinação dos pronomes</span>
+  </button>
+  <button class="menu-btn" onclick="startPronPratica()">
+    <span class="num" data-i18n="menu.num.2">II.</span> <span data-i18n="menu.practice">Prática</span>
+    <span class="desc" data-i18n="pron.menu.practice.desc">Declinar formas pronominais com feedback</span>
+  </button>
+  <button class="menu-btn" onclick="showScreen('pron-quiz-setup')">
+    <span class="num" data-i18n="menu.num.3">III.</span> <span data-i18n="menu.quiz">Quiz</span>
+    <span class="desc" data-i18n="pron.menu.quiz.desc">Quiz de pronomes com pontuação</span>
+  </button>
+  <button class="menu-btn" onclick="startPronDesafio()">
+    <span class="num" data-i18n="menu.num.4">IV.</span> <span data-i18n="menu.challenge">Desafio</span>
+    <span class="desc" data-i18n="pron.menu.challenge.desc">Declinar o pronome inteiro</span>
+  </button>
+  <div class="word-count" id="pronWordCount"></div>
+</div>
+
+<!-- ═══ ESTUDO (Pronomina) ═══ -->
+<div id="pron-estudo" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pron.study.title">Estudo — Tabelas de Pronomes</h2>
+  <div class="dec-selector" id="pronDecSelector"></div>
+  <div id="pronTables"></div>
+</div>
+
+<!-- ═══ PRÁTICA (Pronomina) ═══ -->
+<div id="pron-pratica" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pron.practice.title">Prática — Pronomes</h2>
+  <p class="hint" data-i18n="practice.hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="pronPrAcertos">0</span>/<span id="pronPrTotal">0</span></span>
+    <span id="pronPrPct"></span>
+  </div>
+  <div class="prompt-box" id="pronPrPrompt"></div>
+  <div id="pronPrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="pronPrNextBtn" onclick="window._pronPraticaNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ SETUP (Pronomina) ═══ -->
+<div id="pron-quiz-setup" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pron.quiz.setup.title">Quiz de Pronomes — Configuração</h2>
+  <div class="num-input-row">
+    <label data-i18n="quiz.setup.label">Número de perguntas:</label>
+    <div class="num-spinner">
+      <button class="spin-btn" onclick="pronStepQuiz(-1)">&#9662;</button>
+      <input type="number" id="pronQuizNum" value="10" min="1" max="200">
+      <button class="spin-btn" onclick="pronStepQuiz(1)">&#9652;</button>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="startPronQuiz()" data-i18n="quiz.setup.start">Iniciar Quiz</button>
+</div>
+
+<!-- ═══ QUIZ (Pronomina) ═══ -->
+<div id="pron-quiz" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pron.quiz.title">Quiz — Pronomes</h2>
+  <p class="hint" data-i18n="quiz.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="quiz.question">Pergunta</span> <span id="pronQCur">1</span>/<span id="pronQTotal">10</span></span>
+    <span><span data-i18n="quiz.score">Acertos:</span> <span id="pronQAcertos">0</span></span>
+    <span class="streak"><span data-i18n="quiz.streak">Sequência:</span> <span id="pronQStreak">0</span></span>
+  </div>
+  <div class="prompt-box" id="pronQPrompt"></div>
+  <div id="pronQFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="pronQNextBtn" style="display:none;" data-i18n="quiz.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ RESULTS (Pronomina) ═══ -->
+<div id="pron-quiz-results" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
+  <div class="results-box" id="pronQResults"></div>
+  <button class="submit-btn" onclick="showScreen('menu-pronomina')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
+</div>
+
+<!-- ═══ DESAFIO (Pronomina) ═══ -->
+<div id="pron-desafio" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pron.challenge.title">Desafio — Decline o pronome inteiro</h2>
+  <p class="hint" id="pronDesafioHint" data-i18n="pron.challenge.hint.personal">Preencha todos os 12 campos e envie. Macrons não são necessários.</p>
+  <div class="prompt-box" id="pronDesafioWord"></div>
+  <div class="challenge-grid" id="pronDesafioGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="pronDesafioSubmit" data-i18n="challenge.submit">Verificar</button>
+  </div>
+  <div id="pronDesafioResults" style="margin-top:16px;"></div>
 </div>
 
 </div>
