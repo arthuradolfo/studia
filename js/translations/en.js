@@ -258,6 +258,36 @@ registerTranslation('en', {
   "verb.translate.hint": "Translate the phrase into Latin.",
   "verb.translate.prompt": "Translate into Latin:",
 
+  // ─── Pronoun menu ───
+  "content.pronomina": "Pronomina",
+  "content.pronomina.desc": "Personal, possessive, demonstrative, and relative pronouns",
+  "pron.menu.study.desc": "View pronoun declension tables",
+  "pron.menu.practice.desc": "Decline pronoun forms with feedback",
+  "pron.menu.quiz.desc": "Pronoun quiz with scoring",
+  "pron.menu.challenge.desc": "Decline the entire pronoun",
+  "pron.wordcount": "{0} pronouns",
+
+  // ─── Pronoun study ───
+  "pron.study.title": "Study — Pronoun Tables",
+  "pron.study.type": "{0}",
+  "pron.study.card.title": "{0} — {1}",
+
+  // ─── Pronoun practice/quiz ───
+  "pron.practice.title": "Practice — Pronouns",
+  "pron.quiz.setup.title": "Pronoun Quiz — Setup",
+  "pron.quiz.title": "Quiz — Pronouns",
+
+  // ─── Pronoun challenge ───
+  "pron.challenge.title": "Challenge — Decline the entire pronoun",
+  "pron.challenge.hint.personal": "Fill in all 12 fields and submit. Macrons are not required.",
+  "pron.challenge.hint.gendered": "Fill in all 36 fields (M/F/N) and submit. Macrons are not required.",
+
+  // ─── Pronoun type names ───
+  "pron.type.Persōnāle": "Persōnālia",
+  "pron.type.Possessīvum": "Possessīva",
+  "pron.type.Demonstratīvum": "Demonstratīva",
+  "pron.type.Relātīvum": "Relātīva",
+
 },
 // ─── Word meanings ───
 {
@@ -539,6 +569,19 @@ registerTranslation('en', {
   "sciō": "to know",
   "sentiō": "to feel",
   "dormiō": "to sleep",
+  // ─── Pronoun meanings ───
+  "ego": "I",
+  "tū": "you (sg.)",
+  "sē": "himself/herself (refl.)",
+  "meus": "my",
+  "tuus": "your (sg.)",
+  "noster": "our",
+  "vester": "your (pl.)",
+  "suus": "his/her own (refl.)",
+  "is": "he/that",
+  "hic": "this",
+  "ille": "that (over there)",
+  "quī": "who/which",
 },
 // ─── Grammatical notes ───
 {
@@ -578,4 +621,12 @@ There are also the so-called <strong>mixed</strong> nouns: imparisyllabic nouns 
   "verb_Imperativus_Futurus": `2nd and 3rd person only. Expresses commands to be carried out in the future or permanently. Common in legal texts (<em>Lēgēs XII Tabulārum</em>), wills, religious precepts, and recipes: <em>amātō</em> (thou shalt love / let him love). The 2nd and 3rd person singular are identical. <small>(Allen &amp; Greenough, §449)</small>`,
 
   "verb_primitiva": `Every Latin verb is identified by four principal parts (<em>tempora prīmitīva</em>): the 1st person singular present indicative (infectum stem), the infinitive (identifies the conjugation), the 1st person singular perfect indicative (perfectum stem), and the supine (past participle and compound passive forms). <small>(Allen &amp; Greenough, §170–173)</small>`,
+
+  "pron_Persōnāle": `Personal pronouns have no grammatical gender. There is no 3rd person personal pronoun; demonstratives (<em>is, ea, id</em>) are used instead. The reflexive <em>sē</em> serves all persons and numbers. Combinations with <em>cum</em>: <em>mēcum, tēcum, sēcum, nōbīscum, vōbīscum</em>. <small>(Allen &amp; Greenough, §142–145; Faria)</small>`,
+
+  "pron_Possessīvum": `Possessive pronouns are adjectives and decline like 1st class adjectives (1st/2nd declension). <em>Meus</em> has an irregular masculine vocative singular: <em>mī</em>. <em>Noster</em> and <em>vester</em> follow the -er paradigm (stem retained). <small>(Allen &amp; Greenough, §302; Faria)</small>`,
+
+  "pron_Demonstratīvum": `Demonstrative pronouns indicate proximity: <em>hic</em> (near speaker — "this"), <em>ille</em> (far — "that"), <em>is</em> (neutral/anaphoric — "he/that"). Genitive singular in <em>-īus</em> and dative singular in <em>-ī</em> are common to all three. <small>(Allen &amp; Greenough, §146–151; Faria)</small>`,
+
+  "pron_Relātīvum": `The relative pronoun <em>quī, quae, quod</em> introduces adjectival subordinate clauses. Genitive singular <em>cuius</em> and dative singular <em>cui</em> are the same for all genders. The feminine ablative singular uses <em>quā</em> (not <em>quō</em>). <small>(Allen &amp; Greenough, §147; Faria)</small>`,
 });

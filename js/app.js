@@ -32,6 +32,12 @@ import { startVerbDesafio, checkVerbDesafio, getDesafioVerb } from './modes/verb
 import { startVerbSynopsis, checkVerbSynopsis } from './modes/verb-synopsis.js';
 import { startVerbIdentify, verbIdentifyShow, verbIdentifyCheck, verbIdentifyNext, isVerbIdWaiting } from './modes/verb-identify.js';
 import { startVerbTranslate, verbTranslateShow, verbTranslateCheck, verbTranslateNext, isVerbTrWaiting } from './modes/verb-translate.js';
+// Pronoun modes
+import { ALL_PRONOUNS } from './data/pronouns.js';
+import { initPronEstudo } from './modes/pron-study.js';
+import { startPronPratica, pronPraticaShow, pronPraticaCheck, pronPraticaNext, isPronPrWaiting } from './modes/pron-practice.js';
+import { pronStepQuiz, startPronQuiz, pronQuizShow, pronQuizCheck, pronQuizNext, pronQuizEnd, isPronQWaiting, decPronQCur } from './modes/pron-quiz.js';
+import { startPronDesafio, checkPronDesafio, getDesafioPron } from './modes/pron-challenge.js';
 
 // ─── Navigation ───
 export function showScreen(id) {
@@ -43,6 +49,7 @@ export function showScreen(id) {
   if(id==='adj-estudo') initAdjEstudo();
   if(id==='prep-estudo') initPrepEstudo();
   if(id==='verb-estudo') initVerbEstudo();
+  if(id==='pron-estudo') initPronEstudo();
 }
 
 // ─── Language toggle ───
@@ -106,6 +113,23 @@ function refreshActiveScreen() {
     if (!isVerbIdWaiting()) verbIdentifyShow();
   } else if (id === 'verb-traducao') {
     if (!isVerbTrWaiting()) verbTranslateShow();
+  } else if (id === 'pron-estudo') {
+    initPronEstudo();
+  } else if (id === 'pron-pratica') {
+    if (!isPronPrWaiting()) pronPraticaShow();
+  } else if (id === 'pron-quiz') {
+    if (!isPronQWaiting()) { decPronQCur(); pronQuizShow(); }
+  } else if (id === 'pron-quiz-results') {
+    pronQuizEnd();
+  } else if (id === 'pron-desafio') {
+    const dp = getDesafioPron();
+    if (dp) {
+      const btn = document.getElementById('pronDesafioSubmit');
+      if (btn) {
+        const resultsShown = document.getElementById('pronDesafioResults').innerHTML !== '';
+        btn.textContent = resultsShown ? t('challenge.new') : t('challenge.submit');
+      }
+    }
   }
 }
 
@@ -159,6 +183,8 @@ function updateWordCounts() {
   if (pwc) pwc.textContent = t('prep.wordcount', PREPOSITIONS.length);
   const vwc = document.getElementById('verbWordCount');
   if (vwc) vwc.textContent = t('verb.wordcount', ALL_VERBS.length, VERBS.length, EXTRA_VERBS.length);
+  const pnwc = document.getElementById('pronWordCount');
+  if (pnwc) pnwc.textContent = t('pron.wordcount', ALL_PRONOUNS.length);
 }
 
 // ─── Expose functions to HTML onclick handlers ───
@@ -216,6 +242,16 @@ window.startVerbTranslate = startVerbTranslate;
 window._verbTranslateCheck = verbTranslateCheck;
 window._verbTranslateNext = verbTranslateNext;
 window._verbFilterTense = _verbFilterTense;
+// Pronomina
+window.startPronPratica = startPronPratica;
+window._pronPraticaCheck = pronPraticaCheck;
+window._pronPraticaNext = pronPraticaNext;
+window.pronStepQuiz = pronStepQuiz;
+window.startPronQuiz = startPronQuiz;
+window._pronQuizCheck = pronQuizCheck;
+window._pronQuizNext = pronQuizNext;
+window.startPronDesafio = startPronDesafio;
+window.checkPronDesafio = checkPronDesafio;
 
 // ─── Init ───
 updateThemeBtn();

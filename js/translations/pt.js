@@ -258,6 +258,36 @@ registerTranslation('pt', {
   "verb.translate.hint": "Traduza a frase para o latim.",
   "verb.translate.prompt": "Traduza para o latim:",
 
+  // ─── Pronoun menu ───
+  "content.pronomina": "Pronomina",
+  "content.pronomina.desc": "Pronomes pessoais, possessivos, demonstrativos e relativos",
+  "pron.menu.study.desc": "Ver tabelas de declinação dos pronomes",
+  "pron.menu.practice.desc": "Declinar formas pronominais com feedback",
+  "pron.menu.quiz.desc": "Quiz de pronomes com pontuação",
+  "pron.menu.challenge.desc": "Declinar o pronome inteiro",
+  "pron.wordcount": "{0} pronomes",
+
+  // ─── Pronoun study ───
+  "pron.study.title": "Estudo — Tabelas de Pronomes",
+  "pron.study.type": "{0}",
+  "pron.study.card.title": "{0} — {1}",
+
+  // ─── Pronoun practice/quiz ───
+  "pron.practice.title": "Prática — Pronomes",
+  "pron.quiz.setup.title": "Quiz de Pronomes — Configuração",
+  "pron.quiz.title": "Quiz — Pronomes",
+
+  // ─── Pronoun challenge ───
+  "pron.challenge.title": "Desafio — Decline o pronome inteiro",
+  "pron.challenge.hint.personal": "Preencha todos os 12 campos e envie. Macrons não são necessários.",
+  "pron.challenge.hint.gendered": "Preencha todos os 36 campos (M/F/N) e envie. Macrons não são necessários.",
+
+  // ─── Pronoun type names ───
+  "pron.type.Persōnāle": "Persōnālia",
+  "pron.type.Possessīvum": "Possessīva",
+  "pron.type.Demonstratīvum": "Demonstratīva",
+  "pron.type.Relātīvum": "Relātīva",
+
 },
 // ─── Word meanings ───
 {
@@ -539,6 +569,19 @@ registerTranslation('pt', {
   "sciō": "saber",
   "sentiō": "sentir",
   "dormiō": "dormir",
+  // ─── Pronoun meanings ───
+  "ego": "eu",
+  "tū": "tu",
+  "sē": "se (reflexivo)",
+  "meus": "meu",
+  "tuus": "teu",
+  "noster": "nosso",
+  "vester": "vosso",
+  "suus": "seu (reflexivo)",
+  "is": "ele/esse",
+  "hic": "este",
+  "ille": "aquele",
+  "quī": "que/o qual",
 },
 // ─── Grammatical notes ───
 {
@@ -578,4 +621,12 @@ Há ainda os chamados <strong>mistos</strong>: imparissilábicos cujo tema termi
   "verb_Imperativus_Futurus": `Apenas 2ª e 3ª pessoa. Expressa ordens a serem cumpridas no futuro ou de forma permanente. Frequente em textos legais (<em>Lēgēs XII Tabulārum</em>), testamentos, preceitos religiosos e receitas: <em>amātō</em> (amarás / que ele ame). A 2ª e 3ª pessoa do singular são idênticas. <small>(Allen &amp; Greenough, §449)</small>`,
 
   "verb_primitiva": `Todo verbo latino é identificado por quatro formas fundamentais (<em>tempora prīmitīva</em>): a 1ª pessoa do singular do presente do indicativo (radical do infectum), o infinitivo (identifica a conjugação), a 1ª pessoa do singular do perfeito do indicativo (radical do perfectum) e o supino (particípio passado e formas passivas compostas). <small>(Allen &amp; Greenough, §170–173)</small>`,
+
+  "pron_Persōnāle": `Os pronomes pessoais não têm gênero gramatical. Não há pronome pessoal de 3ª pessoa; usam-se os demonstrativos (<em>is, ea, id</em>). O reflexivo <em>sē</em> serve para todas as pessoas e números. Combinações com <em>cum</em>: <em>mēcum, tēcum, sēcum, nōbīscum, vōbīscum</em>. <small>(Allen &amp; Greenough, §142–145; Faria)</small>`,
+
+  "pron_Possessīvum": `Os pronomes possessivos são adjetivos e declinam-se como adjetivos de 1ª classe (1ª/2ª declinação). <em>Meus</em> tem vocativo singular masculino irregular: <em>mī</em>. <em>Noster</em> e <em>vester</em> seguem o paradigma em <em>-er</em> (radical mantido). <small>(Allen &amp; Greenough, §302; Faria)</small>`,
+
+  "pron_Demonstratīvum": `Os pronomes demonstrativos indicam proximidade: <em>hic</em> (perto do falante — "este"), <em>ille</em> (longe — "aquele"), <em>is</em> (neutro/anafórico — "ele/esse"). Genitivo singular em <em>-īus</em> e dativo singular em <em>-ī</em> são comuns aos três. <small>(Allen &amp; Greenough, §146–151; Faria)</small>`,
+
+  "pron_Relātīvum": `O pronome relativo <em>quī, quae, quod</em> introduz orações subordinadas adjetivas. Genitivo singular <em>cuius</em> e dativo singular <em>cui</em> são iguais para todos os gêneros. No ablativo singular feminino usa-se <em>quā</em> (não <em>quō</em>). <small>(Allen &amp; Greenough, §147; Faria)</small>`,
 });
