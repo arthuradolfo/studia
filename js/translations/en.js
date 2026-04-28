@@ -288,6 +288,78 @@ registerTranslation('en', {
   "pron.type.Demonstratīvum": "Demonstratīva",
   "pron.type.Relātīvum": "Relātīva",
 
+  // ═══ VOX PASSIVA ═══
+  "content.passiva": "Vōx Passīva",
+  "content.passiva.desc": "Passive conjugations (Infectum & Perfectum)",
+  "pass.wordcount": "{0} verbs",
+  // ─── Study ───
+  "pass.menu.study.desc": "Passive conjugation tables",
+  "pass.study.title": "Study — Vōx Passīva",
+  "pass.study.conj": "Conjugation",
+  "pass.study.inf.passiva": "Passive Infinitive",
+  "pass.study.part.passado": "Past Participle",
+  "pass.tense.group.infectum": "Infectum (Synthetic)",
+  "pass.tense.group.perfectum": "Perfectum (Analytic)",
+  "pass.tense.group.all": "All",
+  // ─── Passive tense names ───
+  "pass.tense.P_Praesens_Indicativus": "Present Indicative (Passive)",
+  "pass.tense.P_Imperfectum_Indicativus": "Imperfect Indicative (Passive)",
+  "pass.tense.P_Futurum_I": "Future I (Passive)",
+  "pass.tense.P_Praesens_Subiunctivus": "Present Subjunctive (Passive)",
+  "pass.tense.P_Imperfectum_Subiunctivus": "Imperfect Subjunctive (Passive)",
+  "pass.tense.P_Perfectum_Indicativus": "Perfect Indicative (Passive)",
+  "pass.tense.P_Plusquamperfectum_Indicativus": "Pluperfect Indicative (Passive)",
+  "pass.tense.P_Futurum_II": "Future Perfect (Passive)",
+  "pass.tense.P_Perfectum_Subiunctivus": "Perfect Subjunctive (Passive)",
+  "pass.tense.P_Plusquamperfectum_Subiunctivus": "Pluperfect Subjunctive (Passive)",
+  // ─── Practice ───
+  "pass.menu.practice.desc": "Conjugate random passive forms",
+  "pass.practice.title": "Practice — Vōx Passīva",
+  // ─── Quiz ───
+  "pass.menu.quiz.desc": "Timed passive voice quiz",
+  "pass.quiz.setup.title": "Quiz — Vōx Passīva",
+  "pass.quiz.title": "Quiz — Vōx Passīva",
+  // ─── Challenge ───
+  "pass.menu.challenge.desc": "Conjugate a full passive tense",
+  "pass.challenge.title": "Challenge — Vōx Passīva",
+  "pass.challenge.hint": "Fill all 6 passive forms and submit. Macrons not required.",
+  "pass.challenge.tense": "Tense",
+  // ─── Synopsis ───
+  "pass.menu.synopsis": "Passive Synopsis",
+  "pass.menu.synopsis.desc": "All passive tenses for 1 person/number",
+  "pass.synopsis.title": "Synopsis — Vōx Passīva",
+  "pass.synopsis.hint": "Conjugate the verb in all 10 passive tenses.",
+  "pass.synopsis.prompt": "Conjugate in passive",
+  // ─── Identify ───
+  "pass.menu.identify": "Identify Passive",
+  "pass.menu.identify.desc": "Identify tense/person/number of passive forms",
+  "pass.identify.title": "Identify — Vōx Passīva",
+  "pass.identify.hint": "Identify the tense, person, and number of each passive form.",
+  "pass.identify.prompt": "Identify the tense, person, and number:",
+  // ─── Translate ───
+  "pass.menu.translate": "Translate Passive",
+  "pass.menu.translate.desc": "Translate phrases to Latin passive form",
+  "pass.translate.title": "Translate — Vōx Passīva",
+  "pass.translate.hint": "Write the corresponding Latin passive form.",
+  "pass.translate.prompt": "Translate to Latin (passive):",
+  // ─── Voice Conversion ───
+  "pass.menu.convert": "Active↔Passive Conversion",
+  "pass.menu.convert.desc": "Convert between active and passive voice",
+  "pass.convert.title": "Conversion — Active ↔ Passive",
+  "pass.convert.hint": "Convert the verb form between active and passive voice.",
+  "pass.convert.active.to.passive": "Active → Passive",
+  "pass.convert.passive.to.active": "Passive → Active",
+  "pass.convert.prompt.a2p": "Write in passive voice:",
+  "pass.convert.prompt.p2a": "Write in active voice:",
+  "pass.convert.mode.verb": "Verbum",
+  "pass.convert.mode.sentence": "Sententia",
+  "pass.convert.hint.sentence": "Convert the full sentence between active and passive voice.",
+  "pass.convert.sentence.a2p": "Rewrite in passive voice:",
+  "pass.convert.sentence.p2a": "Rewrite in active voice:",
+  // ─── General notes ───
+  "pass.note.synthetic": "The synthetic passive is used for Infectum tenses. Simply replace the active personal endings (-ō, -s, -t, -mus, -tis, -nt) with the passive ones (-or, -ris, -tur, -mur, -minī, -ntur).",
+  "pass.note.analytic": "The analytic passive is used for Perfectum tenses. It consists of the past participle (amātus, -a, -um) + the verb esse conjugated in the corresponding tense.",
+
 },
 // ─── Word meanings ───
 {

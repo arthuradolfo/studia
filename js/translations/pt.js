@@ -288,6 +288,78 @@ registerTranslation('pt', {
   "pron.type.Demonstratīvum": "Demonstratīva",
   "pron.type.Relātīvum": "Relātīva",
 
+  // ═══ VOX PASSIVA ═══
+  "content.passiva": "Vōx Passīva",
+  "content.passiva.desc": "Conjugações passivas (Infectum et Perfectum)",
+  "pass.wordcount": "{0} verbos",
+  // ─── Study ───
+  "pass.menu.study.desc": "Tabelas de conjugação passiva",
+  "pass.study.title": "Estudo — Vōx Passīva",
+  "pass.study.conj": "Conjugação",
+  "pass.study.inf.passiva": "Infinitivo Passivo",
+  "pass.study.part.passado": "Particípio Passado",
+  "pass.tense.group.infectum": "Infectum (Sintética)",
+  "pass.tense.group.perfectum": "Perfectum (Analítica)",
+  "pass.tense.group.all": "Todas",
+  // ─── Passive tense names ───
+  "pass.tense.P_Praesens_Indicativus": "Praesēns Indicatīvī (Passīva)",
+  "pass.tense.P_Imperfectum_Indicativus": "Imperfectum Indicatīvī (Passīva)",
+  "pass.tense.P_Futurum_I": "Futūrum I (Passīva)",
+  "pass.tense.P_Praesens_Subiunctivus": "Praesēns Subiūnctīvī (Passīva)",
+  "pass.tense.P_Imperfectum_Subiunctivus": "Imperfectum Subiūnctīvī (Passīva)",
+  "pass.tense.P_Perfectum_Indicativus": "Perfectum Indicatīvī (Passīva)",
+  "pass.tense.P_Plusquamperfectum_Indicativus": "Plūsquamperfectum Indicatīvī (Passīva)",
+  "pass.tense.P_Futurum_II": "Futūrum II (Passīva)",
+  "pass.tense.P_Perfectum_Subiunctivus": "Perfectum Subiūnctīvī (Passīva)",
+  "pass.tense.P_Plusquamperfectum_Subiunctivus": "Plūsquamperfectum Subiūnctīvī (Passīva)",
+  // ─── Practice ───
+  "pass.menu.practice.desc": "Conjugar formas passivas aleatórias",
+  "pass.practice.title": "Prática — Vōx Passīva",
+  // ─── Quiz ───
+  "pass.menu.quiz.desc": "Questionário cronometrado de voz passiva",
+  "pass.quiz.setup.title": "Questionário — Vōx Passīva",
+  "pass.quiz.title": "Questionário — Vōx Passīva",
+  // ─── Challenge ───
+  "pass.menu.challenge.desc": "Conjugar um tempo passivo completo",
+  "pass.challenge.title": "Desafio — Vōx Passīva",
+  "pass.challenge.hint": "Preencha todas as 6 formas passivas e envie. Macrons não são necessários.",
+  "pass.challenge.tense": "Tempo",
+  // ─── Synopsis ───
+  "pass.menu.synopsis": "Sinopse Passiva",
+  "pass.menu.synopsis.desc": "Todos os tempos passivos para 1 pessoa/número",
+  "pass.synopsis.title": "Sinopse — Vōx Passīva",
+  "pass.synopsis.hint": "Conjugue o verbo em todos os 10 tempos passivos.",
+  "pass.synopsis.prompt": "Conjugar na passiva",
+  // ─── Identify ───
+  "pass.menu.identify": "Identificar Passiva",
+  "pass.menu.identify.desc": "Identificar tempo/pessoa/número de formas passivas",
+  "pass.identify.title": "Identificar — Vōx Passīva",
+  "pass.identify.hint": "Identifique o tempo, pessoa e número de cada forma passiva.",
+  "pass.identify.prompt": "Identifique o tempo, pessoa e número:",
+  // ─── Translate ───
+  "pass.menu.translate": "Traduzir Passiva",
+  "pass.menu.translate.desc": "Traduzir frases para a forma passiva latina",
+  "pass.translate.title": "Traduzir — Vōx Passīva",
+  "pass.translate.hint": "Escreva a forma passiva latina correspondente.",
+  "pass.translate.prompt": "Traduza para o latim (passiva):",
+  // ─── Voice Conversion ───
+  "pass.menu.convert": "Conversão Ativa↔Passiva",
+  "pass.menu.convert.desc": "Converter entre voz ativa e passiva",
+  "pass.convert.title": "Conversão — Ativa ↔ Passiva",
+  "pass.convert.hint": "Converta a forma verbal entre voz ativa e passiva.",
+  "pass.convert.active.to.passive": "Ativa → Passiva",
+  "pass.convert.passive.to.active": "Passiva → Ativa",
+  "pass.convert.prompt.a2p": "Escreva na voz passiva:",
+  "pass.convert.prompt.p2a": "Escreva na voz ativa:",
+  "pass.convert.mode.verb": "Verbum",
+  "pass.convert.mode.sentence": "Sententia",
+  "pass.convert.hint.sentence": "Converta a frase completa entre voz ativa e passiva.",
+  "pass.convert.sentence.a2p": "Reescreva na voz passiva:",
+  "pass.convert.sentence.p2a": "Reescreva na voz ativa:",
+  // ─── General notes ───
+  "pass.note.synthetic": "A voz passiva sintética é usada para os tempos do Infectum. Basta trocar as desinências ativas (-ō, -s, -t, -mus, -tis, -nt) pelas passivas (-or, -ris, -tur, -mur, -minī, -ntur).",
+  "pass.note.analytic": "A voz passiva analítica é usada para os tempos do Perfectum. É composta pelo particípio passado (amātus, -a, -um) + o verbo esse conjugado no tempo correspondente.",
+
 },
 // ─── Word meanings ───
 {
