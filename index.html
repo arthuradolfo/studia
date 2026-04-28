@@ -40,6 +40,10 @@
     <span class="num">V.</span> <span data-i18n="content.pronomina">Pronomina</span>
     <span class="desc" data-i18n="content.pronomina.desc">Pronomes pessoais, possessivos, demonstrativos e relativos</span>
   </button>
+  <button class="menu-btn content-btn" onclick="showScreen('menu-passiva')">
+    <span class="num">VI.</span> <span data-i18n="content.passiva">Vōx Passīva</span>
+    <span class="desc" data-i18n="content.passiva.desc">Conjugações passivas (Infectum et Perfectum)</span>
+  </button>
 </div>
 
 <!-- ═══ NOMINA MENU (Level 2) ═══ -->
@@ -620,6 +624,191 @@
     <button class="submit-btn" id="pronDesafioSubmit" data-i18n="challenge.submit">Verificar</button>
   </div>
   <div id="pronDesafioResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- VOX PASSIVA SCREENS                                               -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+
+<!-- ═══ PASSIVA MENU (Level 2) ═══ -->
+<div id="menu-passiva" class="screen">
+  <button class="back-btn" onclick="showScreen('content-menu')" data-i18n="nav.back.content">← Conteúdo</button>
+  <h2 data-i18n="content.passiva">Vōx Passīva</h2>
+  <button class="menu-btn" onclick="showScreen('pass-estudo')">
+    <span class="num" data-i18n="menu.num.1">I.</span> <span data-i18n="menu.study">Estudo</span>
+    <span class="desc" data-i18n="pass.menu.study.desc">Ver tabelas de conjugação passiva</span>
+  </button>
+  <button class="menu-btn" onclick="startPassPratica()">
+    <span class="num" data-i18n="menu.num.2">II.</span> <span data-i18n="menu.practice">Prática</span>
+    <span class="desc" data-i18n="pass.menu.practice.desc">Conjugar formas passivas com feedback</span>
+  </button>
+  <button class="menu-btn" onclick="showScreen('pass-quiz-setup')">
+    <span class="num" data-i18n="menu.num.3">III.</span> <span data-i18n="menu.quiz">Quiz</span>
+    <span class="desc" data-i18n="pass.menu.quiz.desc">Quiz de conjugação passiva com pontuação</span>
+  </button>
+  <button class="menu-btn" onclick="startPassDesafio()">
+    <span class="num" data-i18n="menu.num.4">IV.</span> <span data-i18n="menu.challenge">Desafio</span>
+    <span class="desc" data-i18n="pass.menu.challenge.desc">Conjugar todas as 6 formas passivas de um tempo</span>
+  </button>
+  <button class="menu-btn" onclick="startPassSynopsis()">
+    <span class="num">V.</span> <span data-i18n="pass.menu.synopsis">Synopsis</span>
+    <span class="desc" data-i18n="pass.menu.synopsis.desc">Conjugar os 10 tempos passivos para uma pessoa</span>
+  </button>
+  <button class="menu-btn" onclick="startPassIdentify()">
+    <span class="num">VI.</span> <span data-i18n="pass.menu.identify">Tempus</span>
+    <span class="desc" data-i18n="pass.menu.identify.desc">Identificar tempo, pessoa e número (passiva)</span>
+  </button>
+  <button class="menu-btn" onclick="startPassTranslate()">
+    <span class="num">VII.</span> <span data-i18n="pass.menu.translate">Trādūctiō</span>
+    <span class="desc" data-i18n="pass.menu.translate.desc">Traduzir do português/inglês para o latim passivo</span>
+  </button>
+  <button class="menu-btn" onclick="startPassConvert()">
+    <span class="num">VIII.</span> <span data-i18n="pass.menu.convert">Conversiō</span>
+    <span class="desc" data-i18n="pass.menu.convert.desc">Converter entre voz ativa e passiva</span>
+  </button>
+  <div class="word-count" id="passWordCount"></div>
+</div>
+
+<!-- ═══ ESTUDO (Passiva) ═══ -->
+<div id="pass-estudo" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.study.title">Estudo — Tabelas de Conjugação Passiva</h2>
+  <div class="dec-selector" id="passTenseSelector"></div>
+  <div id="passTables"></div>
+</div>
+
+<!-- ═══ PRÁTICA (Passiva) ═══ -->
+<div id="pass-pratica" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.practice.title">Prática — Voz Passiva</h2>
+  <p class="hint" data-i18n="practice.hint">Sem limite de perguntas — pratique o quanto quiser. Use o botão ← Menu para parar.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="passPrAcertos">0</span>/<span id="passPrTotal">0</span></span>
+    <span id="passPrPct"></span>
+  </div>
+  <div class="prompt-box" id="passPrPrompt"></div>
+  <div id="passPrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="passPrNextBtn" onclick="window._passPraticaNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ SETUP (Passiva) ═══ -->
+<div id="pass-quiz-setup" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.quiz.setup.title">Quiz de Voz Passiva — Configuração</h2>
+  <div class="num-input-row">
+    <label data-i18n="quiz.setup.label">Número de perguntas:</label>
+    <div class="num-spinner">
+      <button class="spin-btn" onclick="passStepQuiz(-1)">&#9662;</button>
+      <input type="number" id="passQuizNum" value="10" min="1" max="200">
+      <button class="spin-btn" onclick="passStepQuiz(1)">&#9652;</button>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="startPassQuiz()" data-i18n="quiz.setup.start">Iniciar Quiz</button>
+</div>
+
+<!-- ═══ QUIZ (Passiva) ═══ -->
+<div id="pass-quiz" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.quiz.title">Quiz — Voz Passiva</h2>
+  <p class="hint" data-i18n="quiz.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="quiz.question">Pergunta</span> <span id="passQCur">1</span>/<span id="passQTotal">10</span></span>
+    <span><span data-i18n="quiz.score">Acertos:</span> <span id="passQAcertos">0</span></span>
+    <span class="streak"><span data-i18n="quiz.streak">Sequência:</span> <span id="passQStreak">0</span></span>
+  </div>
+  <div class="prompt-box" id="passQPrompt"></div>
+  <div id="passQFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="passQNextBtn" style="display:none;" data-i18n="quiz.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ QUIZ RESULTS (Passiva) ═══ -->
+<div id="pass-quiz-results" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="quiz.results.title">Resultado do Quiz</h2>
+  <div class="results-box" id="passQResults"></div>
+  <button class="submit-btn" onclick="showScreen('menu-passiva')" style="display:block;margin:0 auto;" data-i18n="quiz.results.back">Voltar ao Menu</button>
+</div>
+
+<!-- ═══ DESAFIO (Passiva) ═══ -->
+<div id="pass-desafio" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.challenge.title">Desafio — Conjugue o tempo passivo inteiro</h2>
+  <p class="hint" id="passDesafioHint" data-i18n="pass.challenge.hint">Preencha todas as 6 formas passivas e envie. Macrons não são necessários.</p>
+  <div class="prompt-box" id="passDesafioWord"></div>
+  <div class="challenge-grid" id="passDesafioGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="passDesafioSubmit" data-i18n="challenge.submit">Verificar</button>
+  </div>
+  <div id="passDesafioResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ SYNOPSIS (Passiva) ═══ -->
+<div id="pass-synopsis" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.synopsis.title">Synopsis — Todos os tempos passivos</h2>
+  <p class="hint" data-i18n="pass.synopsis.hint">Conjugue o verbo nos 10 tempos passivos para a pessoa indicada.</p>
+  <div class="prompt-box" id="passSynopsisWord"></div>
+  <div class="challenge-grid" id="passSynopsisGrid"></div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="submit-btn" id="passSynopsisSubmit" data-i18n="challenge.submit">Verificar</button>
+  </div>
+  <div id="passSynopsisResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ TEMPUS / IDENTIFY (Passiva) ═══ -->
+<div id="pass-tempus" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.identify.title">Tempus — Identificação (Passiva)</h2>
+  <p class="hint" data-i18n="pass.identify.hint">Identifique o tempo, a pessoa e o número da forma passiva.</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="passIdAcertos">0</span>/<span id="passIdTotal">0</span></span>
+    <span id="passIdPct"></span>
+  </div>
+  <div class="prompt-box" id="passIdPrompt"></div>
+  <div id="passIdFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="passIdNextBtn" onclick="window._passIdentifyNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ TRĀDŪCTIŌ / TRANSLATE (Passiva) ═══ -->
+<div id="pass-traducao" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.translate.title">Trādūctiō — Tradução (Passiva)</h2>
+  <p class="hint" data-i18n="pass.translate.hint">Traduza a frase para o latim passivo.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="passTrAcertos">0</span>/<span id="passTrTotal">0</span></span>
+    <span id="passTrPct"></span>
+  </div>
+  <div class="prompt-box" id="passTrPrompt"></div>
+  <div id="passTrFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="passTrNextBtn" onclick="window._passTranslateNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
+</div>
+
+<!-- ═══ CONVERSIŌ / CONVERT (Passiva) ═══ -->
+<div id="pass-conversio" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-passiva')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pass.convert.title">Conversiō — Ativa ↔ Passiva</h2>
+  <div class="dec-selector" id="passCvModeSelector"></div>
+  <p class="hint" id="passCvHint" data-i18n="pass.convert.hint">Converta a forma verbal entre voz ativa e passiva.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="passCvAcertos">0</span>/<span id="passCvTotal">0</span></span>
+    <span id="passCvPct"></span>
+  </div>
+  <div class="prompt-box" id="passCvPrompt"></div>
+  <div id="passCvFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="passCvNextBtn" onclick="window._passConvertNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
 </div>
 
 </div>

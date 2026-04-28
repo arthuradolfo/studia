@@ -38,6 +38,16 @@ import { initPronEstudo } from './modes/pron-study.js';
 import { startPronPratica, pronPraticaShow, pronPraticaCheck, pronPraticaNext, isPronPrWaiting } from './modes/pron-practice.js';
 import { pronStepQuiz, startPronQuiz, pronQuizShow, pronQuizCheck, pronQuizNext, pronQuizEnd, isPronQWaiting, decPronQCur } from './modes/pron-quiz.js';
 import { startPronDesafio, checkPronDesafio, getDesafioPron } from './modes/pron-challenge.js';
+// Passive voice modes
+import { ALL_PASSIVE_VERBS, PASSIVE_VERBS, PASSIVE_EXTRA } from './data/passive.js';
+import { initPassEstudo, _passFilterTense } from './modes/pass-study.js';
+import { startPassPratica, passPraticaShow, passPraticaCheck, passPraticaNext, isPassPrWaiting } from './modes/pass-practice.js';
+import { passStepQuiz, startPassQuiz, passQuizShow, passQuizCheck, passQuizNext, passQuizEnd, isPassQWaiting, decPassQCur } from './modes/pass-quiz.js';
+import { startPassDesafio, checkPassDesafio, getDesafioPass } from './modes/pass-challenge.js';
+import { startPassSynopsis, checkPassSynopsis } from './modes/pass-synopsis.js';
+import { startPassIdentify, passIdentifyShow, passIdentifyCheck, passIdentifyNext, isPassIdWaiting } from './modes/pass-identify.js';
+import { startPassTranslate, passTranslateShow, passTranslateCheck, passTranslateNext, isPassTrWaiting } from './modes/pass-translate.js';
+import { startPassConvert, passConvertShow, passConvertCheck, passConvertNext, isPassCvWaiting } from './modes/pass-convert.js';
 
 // ─── Navigation ───
 export function showScreen(id) {
@@ -50,6 +60,7 @@ export function showScreen(id) {
   if(id==='prep-estudo') initPrepEstudo();
   if(id==='verb-estudo') initVerbEstudo();
   if(id==='pron-estudo') initPronEstudo();
+  if(id==='pass-estudo') initPassEstudo();
 }
 
 // ─── Language toggle ───
@@ -130,6 +141,29 @@ function refreshActiveScreen() {
         btn.textContent = resultsShown ? t('challenge.new') : t('challenge.submit');
       }
     }
+  } else if (id === 'pass-estudo') {
+    initPassEstudo();
+  } else if (id === 'pass-pratica') {
+    if (!isPassPrWaiting()) passPraticaShow();
+  } else if (id === 'pass-quiz') {
+    if (!isPassQWaiting()) { decPassQCur(); passQuizShow(); }
+  } else if (id === 'pass-quiz-results') {
+    passQuizEnd();
+  } else if (id === 'pass-desafio') {
+    const dpv = getDesafioPass();
+    if (dpv) {
+      const btn = document.getElementById('passDesafioSubmit');
+      if (btn) {
+        const resultsShown = document.getElementById('passDesafioResults').innerHTML !== '';
+        btn.textContent = resultsShown ? t('challenge.new') : t('challenge.submit');
+      }
+    }
+  } else if (id === 'pass-tempus') {
+    if (!isPassIdWaiting()) passIdentifyShow();
+  } else if (id === 'pass-traducao') {
+    if (!isPassTrWaiting()) passTranslateShow();
+  } else if (id === 'pass-conversio') {
+    if (!isPassCvWaiting()) passConvertShow();
   }
 }
 
@@ -185,6 +219,8 @@ function updateWordCounts() {
   if (vwc) vwc.textContent = t('verb.wordcount', ALL_VERBS.length, VERBS.length, EXTRA_VERBS.length);
   const pnwc = document.getElementById('pronWordCount');
   if (pnwc) pnwc.textContent = t('pron.wordcount', ALL_PRONOUNS.length);
+  const pvwc = document.getElementById('passWordCount');
+  if (pvwc) pvwc.textContent = t('pass.wordcount', ALL_PASSIVE_VERBS.length);
 }
 
 // ─── Expose functions to HTML onclick handlers ───
@@ -252,6 +288,28 @@ window._pronQuizCheck = pronQuizCheck;
 window._pronQuizNext = pronQuizNext;
 window.startPronDesafio = startPronDesafio;
 window.checkPronDesafio = checkPronDesafio;
+// Passiva
+window.startPassPratica = startPassPratica;
+window._passPraticaCheck = passPraticaCheck;
+window._passPraticaNext = passPraticaNext;
+window.passStepQuiz = passStepQuiz;
+window.startPassQuiz = startPassQuiz;
+window._passQuizCheck = passQuizCheck;
+window._passQuizNext = passQuizNext;
+window.startPassDesafio = startPassDesafio;
+window.checkPassDesafio = checkPassDesafio;
+window.startPassSynopsis = startPassSynopsis;
+window.checkPassSynopsis = checkPassSynopsis;
+window.startPassIdentify = startPassIdentify;
+window._passIdentifyCheck = passIdentifyCheck;
+window._passIdentifyNext = passIdentifyNext;
+window.startPassTranslate = startPassTranslate;
+window._passTranslateCheck = passTranslateCheck;
+window._passTranslateNext = passTranslateNext;
+window._passFilterTense = _passFilterTense;
+window.startPassConvert = startPassConvert;
+window._passConvertCheck = passConvertCheck;
+window._passConvertNext = passConvertNext;
 
 // ─── Init ───
 updateThemeBtn();
