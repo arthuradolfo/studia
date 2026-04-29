@@ -145,7 +145,7 @@ h2 {
   font-size: 0.95rem;
 }
 .decl-card .card-title small { color: var(--text-dim); font-weight: normal; font-size: 0.8rem; }
-.decl-card .card-body { padding: 0 14px 14px; }
+.decl-card .card-body { padding: 0 14px 14px; overflow-x: auto; }
 
 /* Declension table */
 .decl-table {
@@ -463,6 +463,10 @@ h2 {
   h1 { font-size: 1.1rem; }
   .menu-btn { padding: 12px; font-size: 0.9rem; }
   .adj-table th, .adj-table td { padding: 2px 4px; font-size: 0.75rem; }
+  .decl-table { font-size: 0.78rem; min-width: 320px; }
+  .decl-table th { padding: 3px 5px; font-size: 0.7rem; }
+  .decl-table td { padding: 2px 5px; }
+  .decl-table td:first-child, .decl-table th:first-child { white-space: nowrap; max-width: 70px; overflow: hidden; text-overflow: ellipsis; }
 }
 
 /* ═══ Content menu (Level 1) — larger buttons ═══ */
