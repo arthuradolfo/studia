@@ -21,6 +21,10 @@ registerTranslation('pt', {
   "menu.num.2": "II.",
   "menu.num.3": "III.",
   "menu.num.4": "IV.",
+  "menu.num.5": "V.",
+  "menu.num.6": "VI.",
+  "menu.num.7": "VII.",
+  "menu.num.8": "VIII.",
   "menu.study": "Estudo",
   "menu.study.desc": "Ver tabelas completas das declinações",
   "menu.practice": "Prática",
@@ -287,6 +291,22 @@ registerTranslation('pt', {
   "pron.type.Possessīvum": "Possessīva",
   "pron.type.Demonstratīvum": "Demonstratīva",
   "pron.type.Relātīvum": "Relātīva",
+  "pron.type.Interrogatīvum": "Interrogatīva",
+
+  // ─── Sentences mode ───
+  "pron.menu.sentences": "Sententia",
+  "pron.menu.sentences.desc": "Exercícios com pronome relativo em frases",
+  "pron.sentences.title": "Sententia — Pronome Relativo",
+  "pron.sentences.hint": "Identifique ou complete o pronome relativo. A explicação mostra a oração principal e subordinada.",
+  "pron.sentences.fill.prompt": "Complete a lacuna com a forma correta do pronome relativo:",
+  "pron.sentences.analyze.prompt": "Identifique o caso e a função sintática do pronome relativo:",
+  "pron.sentences.antecedent": "Antecedente",
+  "pron.sentences.pronoun": "Pronome",
+  "pron.sentences.case": "Caso",
+  "pron.sentences.function": "Função",
+  "pron.sentences.main": "Or. principal",
+  "pron.sentences.sub": "Or. subordinada",
+  "pron.sentences.answer": "Resposta",
 
   // ═══ VOX PASSIVA ═══
   "content.passiva": "Vōx Passīva",

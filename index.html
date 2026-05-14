@@ -545,6 +545,10 @@
     <span class="num" data-i18n="menu.num.4">IV.</span> <span data-i18n="menu.challenge">Desafio</span>
     <span class="desc" data-i18n="pron.menu.challenge.desc">Declinar o pronome inteiro</span>
   </button>
+  <button class="menu-btn" onclick="startPronSentences()">
+    <span class="num" data-i18n="menu.num.5">V.</span> <span data-i18n="pron.menu.sentences">Sententia</span>
+    <span class="desc" data-i18n="pron.menu.sentences.desc">Exercícios com pronome relativo em frases</span>
+  </button>
   <div class="word-count" id="pronWordCount"></div>
 </div>
 
@@ -624,6 +628,23 @@
     <button class="submit-btn" id="pronDesafioSubmit" data-i18n="challenge.submit">Verificar</button>
   </div>
   <div id="pronDesafioResults" style="margin-top:16px;"></div>
+</div>
+
+<!-- ═══ SENTENTIA (Pronomina — Pronome Relativo) ═══ -->
+<div id="pron-sententia" class="screen">
+  <button class="back-btn" onclick="showScreen('menu-pronomina')" data-i18n="nav.back">← Menu</button>
+  <h2 data-i18n="pron.sentences.title">Sententia — Pronome Relativo</h2>
+  <p class="hint" data-i18n="pron.sentences.hint">Identifique ou complete o pronome relativo. A explicação mostra a oração principal e subordinada.</p>
+  <p class="hint" data-i18n="practice.macron.hint">Macrons não são necessários (ā → a é aceito)</p>
+  <div class="stats-bar">
+    <span><span data-i18n="practice.score">Acertos:</span> <span id="pronStAcertos">0</span>/<span id="pronStTotal">0</span></span>
+    <span id="pronStPct"></span>
+  </div>
+  <div class="prompt-box" id="pronStPrompt"></div>
+  <div id="pronStFeedback"></div>
+  <div style="text-align:center;margin-top:12px;">
+    <button class="submit-btn" id="pronStNextBtn" onclick="window._pronSentenceNext()" style="display:none;" data-i18n="practice.next">Próxima →</button>
+  </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════ -->

@@ -38,6 +38,7 @@ import { initPronEstudo } from './modes/pron-study.js';
 import { startPronPratica, pronPraticaShow, pronPraticaCheck, pronPraticaNext, isPronPrWaiting } from './modes/pron-practice.js';
 import { pronStepQuiz, startPronQuiz, pronQuizShow, pronQuizCheck, pronQuizNext, pronQuizEnd, isPronQWaiting, decPronQCur } from './modes/pron-quiz.js';
 import { startPronDesafio, checkPronDesafio, getDesafioPron } from './modes/pron-challenge.js';
+import { startPronSentences, pronSentenceShow, pronSentenceCheck, pronSentenceNext, isPronStWaiting } from './modes/pron-sentences.js';
 // Passive voice modes
 import { ALL_PASSIVE_VERBS, PASSIVE_VERBS, PASSIVE_EXTRA } from './data/passive.js';
 import { initPassEstudo, _passFilterTense } from './modes/pass-study.js';
@@ -141,6 +142,8 @@ function refreshActiveScreen() {
         btn.textContent = resultsShown ? t('challenge.new') : t('challenge.submit');
       }
     }
+  } else if (id === 'pron-sententia') {
+    if (!isPronStWaiting()) pronSentenceShow();
   } else if (id === 'pass-estudo') {
     initPassEstudo();
   } else if (id === 'pass-pratica') {
@@ -288,6 +291,9 @@ window._pronQuizCheck = pronQuizCheck;
 window._pronQuizNext = pronQuizNext;
 window.startPronDesafio = startPronDesafio;
 window.checkPronDesafio = checkPronDesafio;
+window.startPronSentences = startPronSentences;
+window._pronSentenceCheck = pronSentenceCheck;
+window._pronSentenceNext = pronSentenceNext;
 // Passiva
 window.startPassPratica = startPassPratica;
 window._passPraticaCheck = passPraticaCheck;

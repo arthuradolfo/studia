@@ -4,7 +4,7 @@
 
 import { _f } from './declensions.js';
 
-export const PRON_TYPES = ['Persōnāle', 'Possessīvum', 'Demonstratīvum', 'Relātīvum'];
+export const PRON_TYPES = ['Persōnāle', 'Possessīvum', 'Demonstratīvum', 'Relātīvum', 'Interrogatīvum'];
 
 function _af(mF, fF, nF) {
   const r = {};
@@ -118,6 +118,46 @@ const qui_quae_quod = _af(
      'quae', 'quōrum', 'quibus', 'quae', 'quae', 'quibus')
 );
 
+// ─── Additional Demonstratives ───
+
+const iste_ista_istud = _af(
+  _f('iste', 'istīus', 'istī', 'istum', 'iste', 'istō',
+     'istī', 'istōrum', 'istīs', 'istōs', 'istī', 'istīs'),
+  _f('ista', 'istīus', 'istī', 'istam', 'ista', 'istā',
+     'istae', 'istārum', 'istīs', 'istās', 'istae', 'istīs'),
+  _f('istud', 'istīus', 'istī', 'istud', 'istud', 'istō',
+     'ista', 'istōrum', 'istīs', 'ista', 'ista', 'istīs')
+);
+
+const ipse_ipsa_ipsum = _af(
+  _f('ipse', 'ipsīus', 'ipsī', 'ipsum', 'ipse', 'ipsō',
+     'ipsī', 'ipsōrum', 'ipsīs', 'ipsōs', 'ipsī', 'ipsīs'),
+  _f('ipsa', 'ipsīus', 'ipsī', 'ipsam', 'ipsa', 'ipsā',
+     'ipsae', 'ipsārum', 'ipsīs', 'ipsās', 'ipsae', 'ipsīs'),
+  _f('ipsum', 'ipsīus', 'ipsī', 'ipsum', 'ipsum', 'ipsō',
+     'ipsa', 'ipsōrum', 'ipsīs', 'ipsa', 'ipsa', 'ipsīs')
+);
+
+const idem_eadem_idem = _af(
+  _f('īdem', 'eiusdem', 'eīdem', 'eundem', 'īdem', 'eōdem',
+     'eīdem/īdem', 'eōrundem', 'eīsdem', 'eōsdem', 'eīdem/īdem', 'eīsdem'),
+  _f('eadem', 'eiusdem', 'eīdem', 'eandem', 'eadem', 'eādem',
+     'eaedem', 'eārundem', 'eīsdem', 'eāsdem', 'eaedem', 'eīsdem'),
+  _f('idem', 'eiusdem', 'eīdem', 'idem', 'idem', 'eōdem',
+     'eadem', 'eōrundem', 'eīsdem', 'eadem', 'eadem', 'eīsdem')
+);
+
+// ─── Interrogative Pronoun ───
+
+const quis_quae_quid = _af(
+  _f('quis', 'cuius', 'cui', 'quem', '—', 'quō',
+     'quī', 'quōrum', 'quibus', 'quōs', '—', 'quibus'),
+  _f('quae', 'cuius', 'cui', 'quam', '—', 'quā',
+     'quae', 'quārum', 'quibus', 'quās', '—', 'quibus'),
+  _f('quid', 'cuius', 'cui', 'quid', '—', 'quō',
+     'quae', 'quōrum', 'quibus', 'quae', '—', 'quibus')
+);
+
 // ─── Pronoun array: [type, subtype, nom_m, nom_f, nom_n, gen, forms, hasGender] ───
 
 export const PRONOUNS = [
@@ -135,8 +175,13 @@ export const PRONOUNS = [
   ['Demonstratīvum', 'is, ea, id', 'is', 'ea', 'id', 'eius', is_ea_id, true],
   ['Demonstratīvum', 'hic, haec, hoc', 'hic', 'haec', 'hoc', 'huius', hic_haec_hoc, true],
   ['Demonstratīvum', 'ille, illa, illud', 'ille', 'illa', 'illud', 'illīus', ille_illa_illud, true],
+  ['Demonstratīvum', 'iste, ista, istud', 'iste', 'ista', 'istud', 'istīus', iste_ista_istud, true],
+  ['Demonstratīvum', 'ipse, ipsa, ipsum', 'ipse', 'ipsa', 'ipsum', 'ipsīus', ipse_ipsa_ipsum, true],
+  ['Demonstratīvum', 'īdem, eadem, idem', 'īdem', 'eadem', 'idem', 'eiusdem', idem_eadem_idem, true],
   // Relative
   ['Relātīvum', 'quī, quae, quod', 'quī', 'quae', 'quod', 'cuius', qui_quae_quod, true],
+  // Interrogative
+  ['Interrogatīvum', 'quis, quae, quid', 'quis', 'quae', 'quid', 'cuius', quis_quae_quid, true],
 ];
 
 export const ALL_PRONOUNS = PRONOUNS;

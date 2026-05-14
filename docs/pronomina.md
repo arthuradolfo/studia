@@ -173,6 +173,69 @@ Os pronomes demonstrativos são totalmente irregulares. Caracterizam-se pelo gen
 
 > Nota: *ille* indica distância do falante (3a pessoa). Na língua coloquial tardia, *ille* deu origem aos artigos definidos nas línguas românicas (fr. *le/la*, it. *il/la*, pt. *o/a*).
 
+### iste, ista, istud (gen. istīus) — esse, essa, isso (próximo do ouvinte)
+
+|              | Masculinum | Femininum | Neutrum  |
+|--------------|------------|-----------|----------|
+| **Singularis**                                    |
+| Nominativus  | iste       | ista      | istud    |
+| Genitivus    | istīus     | istīus    | istīus   |
+| Dativus      | istī       | istī      | istī     |
+| Accusativus  | istum      | istam     | istud    |
+| Vocativus    | iste       | ista      | istud    |
+| Ablativus    | istō       | istā      | istō     |
+| **Pluralis**                                      |
+| Nominativus  | istī       | istae     | ista     |
+| Genitivus    | istōrum    | istārum   | istōrum  |
+| Dativus      | istīs      | istīs     | istīs    |
+| Accusativus  | istōs      | istās     | ista     |
+| Vocativus    | istī       | istae     | ista     |
+| Ablativus    | istīs      | istīs     | istīs    |
+
+> Nota: *iste* indica proximidade com o ouvinte (2a pessoa). Segue o mesmo padrão de *ille* com genitivo em *-īus* e dativo em *-ī*.
+
+### ipse, ipsa, ipsum (gen. ipsīus) — ele mesmo, ela mesma, o próprio
+
+|              | Masculinum | Femininum | Neutrum  |
+|--------------|------------|-----------|----------|
+| **Singularis**                                    |
+| Nominativus  | ipse       | ipsa      | ipsum    |
+| Genitivus    | ipsīus     | ipsīus    | ipsīus   |
+| Dativus      | ipsī       | ipsī      | ipsī     |
+| Accusativus  | ipsum      | ipsam     | ipsum    |
+| Vocativus    | ipse       | ipsa      | ipsum    |
+| Ablativus    | ipsō       | ipsā      | ipsō     |
+| **Pluralis**                                      |
+| Nominativus  | ipsī       | ipsae     | ipsa     |
+| Genitivus    | ipsōrum    | ipsārum   | ipsōrum  |
+| Dativus      | ipsīs      | ipsīs     | ipsīs    |
+| Accusativus  | ipsōs      | ipsās     | ipsa     |
+| Vocativus    | ipsī       | ipsae     | ipsa     |
+| Ablativus    | ipsīs      | ipsīs     | ipsīs    |
+
+> Nota: *ipse* é um reforçador — significa "o próprio, ele mesmo". Pode acompanhar outros pronomes: *ego ipse* = "eu mesmo"; *illī ipsī* = "aqueles mesmos". (Allen & Greenough, §146.a)
+
+### īdem, eadem, idem (gen. eiusdem) — o mesmo, a mesma
+
+|              | Masculinum | Femininum | Neutrum  |
+|--------------|------------|-----------|----------|
+| **Singularis**                                    |
+| Nominativus  | īdem       | eadem     | idem     |
+| Genitivus    | eiusdem    | eiusdem   | eiusdem  |
+| Dativus      | eīdem      | eīdem     | eīdem    |
+| Accusativus  | eundem     | eandem    | idem     |
+| Vocativus    | īdem       | eadem     | idem     |
+| Ablativus    | eōdem      | eādem     | eōdem    |
+| **Pluralis**                                      |
+| Nominativus  | eīdem/īdem | eaedem    | eadem    |
+| Genitivus    | eōrundem   | eārundem  | eōrundem |
+| Dativus      | eīsdem     | eīsdem    | eīsdem   |
+| Accusativus  | eōsdem     | eāsdem    | eadem    |
+| Vocativus    | eīdem/īdem | eaedem    | eadem    |
+| Ablativus    | eīsdem     | eīsdem    | eīsdem   |
+
+> Nota: *īdem* é formado a partir de *is* + a partícula *-dem* (= "mesmo"). O *s* final de *is* cai diante de *-dem*; o *d* de *id* cai; o *m* final torna-se *n* antes de *d* (*eundem*, não *eumdem*). (Allen & Greenough, §146.b)
+
 ---
 
 ## IV. Prōnōmen Relātīvum
@@ -198,15 +261,107 @@ Os pronomes demonstrativos são totalmente irregulares. Caracterizam-se pelo gen
 
 > Nota: O pronome relativo concorda em **gênero** e **número** com o antecedente, mas o **caso** é determinado pela função na oração subordinada. O pronome interrogativo (*quis, quid*) tem quase as mesmas formas, diferindo apenas no nominativo e acusativo neutro singular (*quid* em vez de *quod*). (Allen & Greenough, §147–148)
 
+### Uso do Pronome Relativo — Oração Principal e Subordinada
+
+O pronome relativo introduz uma **oração subordinada adjetiva** que se refere a um substantivo (o **antecedente**) na oração principal. A oração subordinada funciona como um adjetivo que qualifica o antecedente.
+
+**Regras de concordância:**
+
+1. O relativo concorda com o antecedente em **gênero** e **número**
+2. O **caso** do relativo é determinado pela sua função sintática na oração subordinada (não na principal)
+
+**Exemplo analisado:**
+
+> *Vir quem vidēs amīcus meus est.* — O homem que você vê é meu amigo.
+
+| Oração | Texto | Análise |
+|--------|-------|---------|
+| Principal | *Vir ... amīcus meus est* | O homem é meu amigo |
+| Subordinada | *quem vidēs* | que você vê |
+
+- Antecedente: *vir* (masculino, singular)
+- Pronome: *quem* — masculino singular (concorda com *vir*), acusativo (objeto direto de *vidēs*)
+
+**Mais exemplos:**
+
+| Frase | Relativo | Gênero/Número | Caso | Função na subordinada |
+|-------|----------|---------------|------|----------------------|
+| *Poēta cuius amīcus erat caecus puerum audiēbat.* | cuius | masc. sg. | Genitivo | adjunto adnominal (do poeta) |
+| *Fēminās quae in viā ambulant vidēmus.* | quae | fem. pl. | Nominativo | sujeito |
+| *Opus cui mē referō hoc est.* | cui | neutro sg. | Dativo | objeto indireto |
+| *Aula quā studēmus calida est.* | quā | fem. sg. | Ablativo | adjunto adverbial (lugar) |
+
+### Exercícios com Pronome Relativo
+
+**Tipo I — Análise:** Traduzir e indicar caso, número, gênero e função sintática do relativo.
+
+1. *Magister laudat discipulōs quī dīligentēs sunt.*
+2. *Nōn omnēs agrī quōs ille agricola possidet fertilēs sunt.*
+3. *Pater imāginem quam mihi dōnāvistī laudāvit.*
+4. *Pater cuius fīliās ēducāvī aegrotus est.*
+5. *Rēx cui omnēs obtemperant ipse lēgibus obtemperat.*
+
+**Tipo II — Completar:** Preencher a lacuna com a forma correta do pronome relativo.
+
+1. *Omnēs rēs \_\_\_ Deus creāvit optimae sunt.*
+2. *Fīliās \_\_\_ pater aegrotus est ēducāvī.*
+3. *Informā nōs magister ad artēs \_\_\_ vītam exōrnant.*
+4. *Cīvēs urbis \_\_\_ expugnāvistis miserrimī sunt.*
+5. *Animal \_\_\_ sanguinem habet cor habet.*
+
+**Tipo III — Reescrever:** Juntar dois períodos simples usando o pronome relativo.
+
+1. *Ars hominēs docet. Ars longa est.* → *Ars \_\_\_ hominēs docet longa est.*
+2. *Vir male cōgitat. Virum fēmina videt.* → *Vir \_\_\_ fēmina videt male cōgitat.*
+3. *Vīnum bonum est. Vīnum dē amphorā dēfluit.* → *Vīnum \_\_\_ dē amphorā dēfluit bonum est.*
+
+---
+
+## V. Prōnōmen Interrogatīvum
+
+O pronome interrogativo latino possui forma substantiva (*quis, quid* — "quem?, que?") e forma adjetiva (*quī, quod* — "que?, qual?"). Suas formas são quase idênticas às do relativo.
+
+### quis, quae, quid (subst.) / quī, quae, quod (adj.) — quem?, que?, qual?
+
+|              | Masculinum | Femininum | Neutrum (subst./adj.) |
+|--------------|------------|-----------|------------------------|
+| **Singularis**                                              |
+| Nominativus  | quis/quī   | quae      | quid / quod            |
+| Genitivus    | cuius      | cuius     | cuius                  |
+| Dativus      | cui        | cui       | cui                    |
+| Accusativus  | quem       | quam      | quid / quod            |
+| Vocativus    | —          | —         | —                      |
+| Ablativus    | quō        | quā       | quō                    |
+| **Pluralis**                                                |
+| Nominativus  | quī        | quae      | quae                   |
+| Genitivus    | quōrum     | quārum    | quōrum                 |
+| Dativus      | quibus     | quibus    | quibus                 |
+| Accusativus  | quōs       | quās      | quae                   |
+| Vocativus    | —          | —         | —                      |
+| Ablativus    | quibus     | quibus    | quibus                 |
+
+> Nota: A diferença entre interrogativo e relativo está apenas no nominativo e acusativo neutro singular: *quid* (interrogativo substantivo) vs. *quod* (relativo e interrogativo adjetivo). O uso adjetivo sempre emprega *quī, quae, quod*. As formas podem ser reforçadas com a partícula *-nam*: *quisnam?* = "quem pois?" (Allen & Greenough, §148)
+
+### Outros Pronomes Interrogativos
+
+| Pronome | Significado | Declinação |
+|---------|-------------|------------|
+| uter, utra, utrum | qual dos dois? | como adj. 1ª classe (gen. *utrīus*, dat. *utrī*) |
+| quālis, -e | qual?, de que espécie? | como adj. 2ª classe (*fortis*) |
+| quantus, -a, -um | de que tamanho?, quão grande? | como adj. 1ª classe (*bonus*) |
+| quot (indecl.) | quantos? | indeclinável, sempre plural |
+
 ---
 
 ## Observações Gerais
 
-1. **Genitivo em -īus, dativo em -ī**: Os demonstrativos e o relativo compartilham as terminações do genitivo singular (*-īus*) e dativo singular (*-ī*) em todos os gêneros — uma característica que os distingue dos adjetivos regulares.
+1. **Genitivo em -īus, dativo em -ī**: Os demonstrativos, o relativo e o interrogativo compartilham as terminações do genitivo singular (*-īus*) e dativo singular (*-ī*) em todos os gêneros — uma característica que os distingue dos adjetivos regulares.
 
 2. **Pronomes pessoais vs. possessivos**: Os pronomes pessoais (*ego, tū, sē*) indicam a pessoa; os possessivos (*meus, tuus, suus*) funcionam como adjetivos e concordam com o substantivo possuído.
 
-3. **Sistema demonstrativo tripartido**: *hic* (perto do falante) / *is* (neutro/anafórico) / *ille* (distante do falante) — similar ao sistema este/esse/aquele do português.
+3. **Sistema demonstrativo tripartido**: *hic* (perto do falante) / *is* (neutro/anafórico) / *ille* (distante do falante) — similar ao sistema este/esse/aquele do português. *iste* indica proximidade com o ouvinte. *ipse* reforça ("o próprio") e *īdem* indica identidade ("o mesmo").
+
+4. **Relativo vs. Interrogativo**: Compartilham quase todas as formas. A diferença principal é *quid* (interrogativo substantivo) vs. *quod* (relativo). O relativo introduz oração subordinada; o interrogativo introduz pergunta.
 
 ---
 

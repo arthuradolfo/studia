@@ -21,6 +21,10 @@ registerTranslation('en', {
   "menu.num.2": "II.",
   "menu.num.3": "III.",
   "menu.num.4": "IV.",
+  "menu.num.5": "V.",
+  "menu.num.6": "VI.",
+  "menu.num.7": "VII.",
+  "menu.num.8": "VIII.",
   "menu.study": "Study",
   "menu.study.desc": "View complete declension tables",
   "menu.practice": "Practice",
@@ -287,6 +291,22 @@ registerTranslation('en', {
   "pron.type.Possessīvum": "Possessīva",
   "pron.type.Demonstratīvum": "Demonstratīva",
   "pron.type.Relātīvum": "Relātīva",
+  "pron.type.Interrogatīvum": "Interrogatīva",
+
+  // ─── Sentences mode ───
+  "pron.menu.sentences": "Sententia",
+  "pron.menu.sentences.desc": "Relative pronoun exercises in sentences",
+  "pron.sentences.title": "Sententia — Relative Pronoun",
+  "pron.sentences.hint": "Identify or complete the relative pronoun. The explanation shows the main and subordinate clauses.",
+  "pron.sentences.fill.prompt": "Fill the blank with the correct relative pronoun form:",
+  "pron.sentences.analyze.prompt": "Identify the case and syntactic function of the relative pronoun:",
+  "pron.sentences.antecedent": "Antecedent",
+  "pron.sentences.pronoun": "Pronoun",
+  "pron.sentences.case": "Case",
+  "pron.sentences.function": "Function",
+  "pron.sentences.main": "Main clause",
+  "pron.sentences.sub": "Subordinate clause",
+  "pron.sentences.answer": "Answer",
 
   // ═══ VOX PASSIVA ═══
   "content.passiva": "Vōx Passīva",
